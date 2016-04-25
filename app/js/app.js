@@ -1,1 +1,1 @@
-var  = angular.module('', []);
+var japanesifyApp= angular.module('japanesifyApp', []);
