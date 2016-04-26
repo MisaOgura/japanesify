@@ -5,5 +5,4 @@ japanesifyApp.controller('japanesifyController', [function(){
     vm.name = name;
   }
 
-
-}])
+}]);
