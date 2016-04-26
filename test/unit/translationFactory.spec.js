@@ -6,7 +6,7 @@ describe ('TranslationFactory', function(){
 
   beforeEach(inject(function(TranslationFactory){
     original = 'Misa';
-    translated = 'みさ';
+    translated = 'ミサ';
     translation = new TranslationFactory(original);
   }));
 
