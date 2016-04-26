@@ -1,13 +1,13 @@
 japanesifyApp.factory('TranslationFactory', function(){
 
    function TranslationFactory(romanjiName){
-      var self = this;
-      self.romanji = romanjiName;
+      this.romanji = romanjiName;
+      this.japanese = '';
    }
 
    TranslationFactory.prototype.saveJapanese = function(japaneseName) {
-     return self.japanese = japaneseName;
-   }
+     this.japanese = japaneseName;
+   };
 
    return TranslationFactory;
 });

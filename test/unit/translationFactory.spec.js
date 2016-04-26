@@ -2,20 +2,21 @@ describe ('TranslationFactory', function(){
 
   beforeEach(module('japanesifyApp'));
 
-  var factory, original, translation;
+  var translation, original, translated;
 
   beforeEach(inject(function(TranslationFactory){
     original = 'Misa';
-    translation = 'みさ';
-    factory = new TranslationFactory(original);
+    translated = 'みさ';
+    translation = new TranslationFactory(original);
   }));
 
   it('stores a Romanji string', function(){
-    expect(factory.romanji).toEqual(original);
+    expect(translation.romanji).toEqual(original);
   });
 
   it('saves the Japanese translation', function() {
-    expect(factory.saveJapanese(translation)).toEqual(translation);
+    translation.saveJapanese(translated);
+    expect(translation.japanese).toEqual(translated);
   });
 
 });
