@@ -1,10 +1,12 @@
 japanesifyApp.factory('TranslationFactory', function(){
+
    function TranslationFactory(romanjiName){
-      this.romanji = romanjiName;
+      var self = this;
+      self.romanji = romanjiName;
    }
 
    TranslationFactory.prototype.saveJapanese = function(japaneseName) {
-     return this.japanese = japaneseName;
+     return self.japanese = japaneseName;
    }
 
    return TranslationFactory;
