@@ -1,16 +1,16 @@
 describe ('japanesifyController', function(){
-    
-    beforeEach(module('japanesifyApp'))
-    
+
+    beforeEach(module('japanesifyApp'));
+
     var ctrl;
 
   beforeEach(inject(function($controller){
-    ctrl = $controller('japanesifyController')
-  }))
+    ctrl = $controller('japanesifyController');
+  }));
 
   it ('it saves a name', function(){
-    var name="Rhiannon"
+    var name="Rhiannon";
     ctrl.saveName(name);
     expect(ctrl.name).toEqual(name);
-  })
-})
+  });
+});
