@@ -11,7 +11,7 @@ describe ('TranslationFactory', function(){
   }));
 
   it('stores a Romanji string', function(){
-    expect(translation.romanji).toEqual(original);
+    expect(translation.romanji).toEqual('misa');
   });
 
   it('saves the Japanese translation', function() {
