@@ -2,12 +2,12 @@ japanesifyApp.service('japanesifyService', [function() {
   var self = this;
 
   self.splitIntoSyllables = function(string, ruleJP) {
-    string = string.split(ruleJP.regex);
-    return string.filter(filterEmptyString);
+    var array = string.split(ruleJP.regex);
+    return array.filter(filterEmptyString);
   };
 
   self.convertToJapanese = function(array, ruleJP) {
-    matcher = ruleJP.matcher;
+    var matcher = ruleJP.matcher;
     var newArray = array.map(function(syllable) {
       return matcher[syllable];
     });
