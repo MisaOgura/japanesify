@@ -5,7 +5,7 @@ describe ('TranslationFactory', function(){
   var factory, jpTranslation;
 
   beforeEach(inject(function(TranslationFactory){
-    romanji = 'Misa'
+    romanji = 'Misa';
     japanese = 'みさ';
     factory = new TranslationFactory(romanji);
   }));
