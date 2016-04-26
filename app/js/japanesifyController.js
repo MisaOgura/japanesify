@@ -1,8 +1,8 @@
 japanesifyApp.controller('japanesifyController', [function(){
-  var vm=this;
+  var vm = this;
 
    vm.saveName = function(name) {
-    vm.name=name;
+    vm.name = name;
   }
 
 

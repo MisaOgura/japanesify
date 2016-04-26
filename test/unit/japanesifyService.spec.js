@@ -1,16 +1,16 @@
 describe('japenesifyService', function (){
   beforeEach(module('japanesifyApp'));
 
-  var japenesifyService;
+  var japenesifyService, JPrule, string;
 
   beforeEach(inject(function(_japanesifyService_){
     japenesifyService = _japanesifyService_
-    rule = {split: {"/^a/": true, "/^B": false}, matcher: {"/a/":"あ"}}
-    string = "abc"
+    var JPrule = {regex: "/[b-df-hj-np-tv-z][eaiou]/i", matcher: {"/a/":"あ"}}
+    var string = "Caspar"
   }));
 
   it ('split string based on regex', function() {
-    expect(japenesifyService.splitIntoSyllables(string, rule.split)).toEqual(["a","bc"])
+    expect(japenesifyService.splitIntoSyllables("Caspar", {regex: /([b-df-hj-np-tv-z][aeiou]r|[b-df-hj-np-tv-z][aeiou]|[b-df-hj-np-tv-z])/i, matcher: {"/a/":"あ"}})).toEqual(["Ca","s","par"])
   })
 
 });
