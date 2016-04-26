@@ -1,13 +1,13 @@
-japanesifyApp.factory('TranslationFactory', function(){
+japanesifyApp.factory('TranslationFactory', ['japanesifyService', function(japanesifyService){
 
    function TranslationFactory(romanjiName){
       this.romanji = romanjiName;
-      this.japanese = '';
+      this.japanese = translate(this.romanjiName);
    }
 
-   TranslationFactory.prototype.saveJapanese = function(japaneseName) {
-     this.japanese = japaneseName;
-   };
+   function translate(name) {
+      return japanesifyService.translateWord(name);
+   }
 
    return TranslationFactory;
-});
+}]);

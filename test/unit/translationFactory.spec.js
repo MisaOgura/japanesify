@@ -2,12 +2,13 @@ describe ('TranslationFactory', function(){
 
   beforeEach(module('japanesifyApp'));
 
-  var translation, original, translated;
+  var translation, original, translated, japanesifyService;
 
-  beforeEach(inject(function(TranslationFactory){
+  beforeEach(inject(function(TranslationFactory, _japanesifyService_){
     original = 'Misa';
     translated = 'みさ';
     translation = new TranslationFactory(original);
+    japanesifyService = jasmine.createSpyObj('japanesifyService',['translateWord'])
   }));
 
   it('stores a Romanji string', function(){
@@ -15,8 +16,12 @@ describe ('TranslationFactory', function(){
   });
 
   it('saves the Japanese translation', function() {
-    translation.saveJapanese(translated);
+    spyOn(japanesifyService, 'translateWord').andReturnValue(translated)
+
     expect(translation.japanese).toEqual(translated);
   });
+
+
+
 
 });
