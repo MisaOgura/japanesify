@@ -4,12 +4,13 @@
     <meta charset="utf-8">
     <title>Japanesify</title>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="js/app.js"></script> 
-    <script src="js/japanesifyController.js"></script> 
+    <script src="js/app.js"></script>
+    <script src="js/japanesifyController.js"></script>
+    <script src="js/translationFactory.js"></script>
   </head>
   <body>
       <div ng-controller="japanesifyController as ctrl">
-        <input id="input" ng-model="name"> 
+        <input id="input" ng-model="name">
         <button id="submit" ng-click="ctrl.saveName(name)">Submit</button>
         <span class="translation"> {{ctrl.name}}</span>
       </div>

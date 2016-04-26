@@ -3,7 +3,7 @@ japanesifyApp.controller('japanesifyController', [function(){
 
    vm.saveName = function(name) {
     vm.name=name;
-  }
+  };
 
 
-}])
+}]);
