@@ -1,16 +1,17 @@
 describe ('japanesifyController', function(){
 
-    beforeEach(module('japanesifyApp'));
+  beforeEach(module('japanesifyApp'));
 
-    var ctrl;
+  var ctrl, TranslationFactory, object;
 
   beforeEach(inject(function($controller){
     ctrl = $controller('japanesifyController');
+    object = {};
+    spyOn(ctrl, '_createTranslationObj').and.returnValue(object);
   }));
 
-  it ('it saves a name', function(){
-    var name="Rhiannon";
-    ctrl.saveName(name);
-    expect(ctrl.name).toEqual(name);
+  it('saves a new translation object', function() {
+    ctrl.newTranslation('Misa');
+    expect(ctrl.translationObj).toEqual(object);
   });
 });

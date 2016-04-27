@@ -1,8 +1,11 @@
-japanesifyApp.controller('japanesifyController', [function(){
+japanesifyApp.controller('japanesifyController', ['TranslationFactory', 'japanesifyService', 'rulesService',function(TranslationFactory, japanesifyService, rulesService){
   var vm = this;
 
-   vm.saveName = function(name) {
-    vm.name = name;
+  vm.newTranslation = function(name) {
+    vm.translationObj = vm._createTranslationObj(name);
   };
 
+  vm._createTranslationObj = function(name) {
+    return new TranslationFactory(name);
+  };
 }]);
