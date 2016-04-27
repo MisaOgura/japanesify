@@ -2,6 +2,7 @@ describe('japenesifyService', function (){
   beforeEach(module('japanesifyApp'));
 
   var japenesifyService, string;
+
   var ruleJP = {regex: /(ll[aeiou])|([b-df-hj-np-tv-z]{2})\b|([b-df-hj-np-tv-z][aeiou][rw])(\b|(?![aeiouy]))|([bdf-hj-np-tv-z]+[aeo][aeiou])|([b-df-hj-np-tv-z]h[aeiou])|(nn[aeiou])|\b(ch(?![aeiou]))|(ch[aeiou])|([b-df-hj-np-tv-z][aeiou])|([b-df-hj-npqstv-z])|([aeiou])/i,
                 matcher: {'e'   : 'エ',
                                 'ri'  : 'リ',
