@@ -14,9 +14,11 @@
 
   <body>
       <div ng-controller="japanesifyController as ctrl">
-        <input id="input" ng-model="name">
-        <button id="submit" ng-click="ctrl.newTranslation(name)">Submit</button>
-          <h1 class="translation">{{ctrl.translationObj.japanese}}</h1>
+        <form>
+          <input type="text" id="input" ng-model="name">
+          <button id="submit" ng-click="ctrl.newTranslation(name)">Submit</button>
+        </form>
+        <h1 class="translation">{{ctrl.translationObj.japanese}}</h1>
       </div>
   </body>
 </html>
