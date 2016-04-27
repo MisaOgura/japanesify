@@ -22,7 +22,7 @@ describe('japenesifyService', function (){
     });
   });
 
-  describe('#translateWord', function(){
+  fdescribe('#translateWord', function(){
     it ('returns translated string', function() {
       expect(japanesifyService.translateWord(string, ruleJP)).toEqual('カスパー');
     });

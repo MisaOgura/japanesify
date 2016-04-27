@@ -14,7 +14,7 @@ describe ('japanesifyController', function(){
 
   }));
 
-  fit('saves a new translation object', function() {
+  xit('saves a new translation object', function() {
     ctrl.newTranslation('Misa');
     var translation = new TranslationFactory('Misa');
     expect(ctrl.translationObj).toEqual(translation);
