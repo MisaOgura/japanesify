@@ -1,7 +1,7 @@
 japanesifyApp.factory('TranslationFactory', function(){
 
    function TranslationFactory(romanjiName){
-      this.romanji = romanjiName;
+      this.romanji = romanjiName.toLowerCase();
       this.japanese = '';
    }
 

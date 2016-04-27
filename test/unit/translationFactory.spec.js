@@ -6,12 +6,12 @@ describe ('TranslationFactory', function(){
 
   beforeEach(inject(function(TranslationFactory){
     original = 'Misa';
-    translated = 'みさ';
+    translated = 'ミサ';
     translation = new TranslationFactory(original);
   }));
 
   it('stores a Romanji string', function(){
-    expect(translation.romanji).toEqual(original);
+    expect(translation.romanji).toEqual(original.toLowerCase());
   });
 
   it('saves the Japanese translation', function() {
