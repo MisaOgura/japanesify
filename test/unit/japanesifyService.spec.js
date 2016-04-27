@@ -2,7 +2,7 @@ describe('japenesifyService', function (){
   beforeEach(module('japanesifyApp'));
 
   var japenesifyService, string;
-  var ruleJP = {regex: /(ll[aeiou])|([b-df-hj-np-tv-z][aeiou]r|w)\b|(phoe)|([b-df-hj-np-tv-z][aeiou]{2})|([b-df-hj-np-tv-z]h[aeiou])|(nn[aeiou])|(ch(?![aeiou]))|(ch[aeiou])|([b-df-hj-np-tv-z][aeiou])|(ck)|([b-df-hj-npqstv-z])|([aeiou])/i,
+  var ruleJP = {regex: /(ll[aeiou])|([b-df-hj-np-tv-z][aeiou][rw])\b|(phoe)|([b-df-hj-np-tv-z][aeiou]{2})|([b-df-hj-np-tv-z]h[aeiou])|(nn[aeiou])|(ch(?![aeiou]))|(ch[aeiou])|([b-df-hj-np-tv-z][aeiou])|([b-df-hj-np-tv-z]{2})\b|([b-df-hj-npqstv-z])|([aeiou])/i,
                 matcher: {'e'   : 'エ',
                                 'ri'  : 'リ',
                                 'ka'  : 'カ',
@@ -60,58 +60,65 @@ describe('japenesifyService', function (){
   }));
 
   it ('combines a vowel with a preceding consonant', function() {
-    var string = "misa";
-    expect(japenesifyService.splitIntoSyllables(string, ruleJP)).toEqual(["mi","sa"]);
+    expect(japenesifyService.splitIntoSyllables("misa", ruleJP)).toEqual(["mi","sa"]);
+    expect(japenesifyService.splitIntoSyllables("erika", ruleJP)).toEqual(["e", "ri","ka"]);
+    expect(japenesifyService.splitIntoSyllables("murilo", ruleJP)).toEqual(["mu", "ri","lo"]);
+    expect(japenesifyService.splitIntoSyllables("pete", ruleJP)).toEqual(["pe", "te"]);
   });
 
   it ("slices an 'n' out if it precedes a consonant", function() {
-    var string = "lorenzo";
-    expect(japenesifyService.splitIntoSyllables(string, ruleJP)).toEqual(["lo","re","n", "zo"]);
+    expect(japenesifyService.splitIntoSyllables("lorenzo", ruleJP)).toEqual(["lo","re","n", "zo"]);
   });
 
   it ("slices an 'n' out if it's the last letter", function() {
-    var string = "kevin";
-    expect(japenesifyService.splitIntoSyllables(string, ruleJP)).toEqual(["ke","vi","n"]);
+    expect(japenesifyService.splitIntoSyllables("kevin", ruleJP)).toEqual(["ke","vi","n"]);
+    expect(japenesifyService.splitIntoSyllables("simon", ruleJP)).toEqual(["si","mo","n"]);
+    expect(japenesifyService.splitIntoSyllables("yasmin", ruleJP)).toEqual(["ya","s","mi", "n"]);
+    expect(japenesifyService.splitIntoSyllables("sachin", ruleJP)).toEqual(["sa","chi", "n"]);
+    expect(japenesifyService.splitIntoSyllables("rhiannon", ruleJP)).toEqual(["rhi","a", "nno", "n"]);
   });
 
   it ("combines a double 'n' and a following vowel", function() {
-    var string = "tobenna";
-    expect(japenesifyService.splitIntoSyllables(string, ruleJP)).toEqual(["to","be","nna"]);
+    expect(japenesifyService.splitIntoSyllables("tobenna", ruleJP)).toEqual(["to","be","nna"]);
+    expect(japenesifyService.splitIntoSyllables("anne", ruleJP)).toEqual(["a","nne"]);
   });
 
   it ("slices an 's' out it precedes a consonant", function() {
-    var string = "yasmin";
-    expect(japenesifyService.splitIntoSyllables(string, ruleJP)).toEqual(["ya","s","mi", "n"]);
+    expect(japenesifyService.splitIntoSyllables("yasmin", ruleJP)).toEqual(["ya","s","mi", "n"]);
+    expect(japenesifyService.splitIntoSyllables("jasmina", ruleJP)).toEqual(["ja","s","mi", "na"]);
+    expect(japenesifyService.splitIntoSyllables("caspar", ruleJP)).toEqual(["ca","s","par"]);
   });
 
-  it ("combines the last 'r' with a preceding vowel or contonant/vowel pair", function() {
-    var string = "caspar";
-    expect(japenesifyService.splitIntoSyllables(string, ruleJP)).toEqual(["ca","s","par"]);
+  it ("combines the last 'r'/'w' with a preceding vowel or contonant/vowel pair", function() {
+    expect(japenesifyService.splitIntoSyllables("caspar", ruleJP)).toEqual(["ca","s","par"]);
+    expect(japenesifyService.splitIntoSyllables("oliver", ruleJP)).toEqual(["o","li","ver"]);
+    expect(japenesifyService.splitIntoSyllables("andrew", ruleJP)).toEqual(["a","n","d", "rew"]);
   });
 
   it ("recognises and split 'ch' followed by a consonant", function() {
-    var string = "chris";
-    expect(japenesifyService.splitIntoSyllables(string, ruleJP)).toEqual(["ch","ri","s"]);
+    expect(japenesifyService.splitIntoSyllables("chris", ruleJP)).toEqual(["ch","ri","s"]);
   });
 
   it ("recognises 'sh' and combines it with a following vowel", function() {
-    var string = "shane";
-    expect(japenesifyService.splitIntoSyllables(string, ruleJP)).toEqual(["sha","ne"]);
+    expect(japenesifyService.splitIntoSyllables("shane", ruleJP)).toEqual(["sha","ne"]);
   });
 
   it ("splits a consonant if it's the last letter, expecpt for 'r'", function() {
     var string = "adil";
-    expect(japenesifyService.splitIntoSyllables(string, ruleJP)).toEqual(["a","di","l"]);
+    expect(japenesifyService.splitIntoSyllables("adil", ruleJP)).toEqual(["a","di","l"]);
+    expect(japenesifyService.splitIntoSyllables("joj", ruleJP)).toEqual(["jo","j"]);
+    expect(japenesifyService.splitIntoSyllables("hanif", ruleJP)).toEqual(["ha","ni","f"]);
+    expect(japenesifyService.splitIntoSyllables("simon", ruleJP)).toEqual(["si","mo","n"]);
+    expect(japenesifyService.splitIntoSyllables("chris", ruleJP)).toEqual(["ch","ri","s"]);
   });
 
   it ("recognise and split 'ph' followed by a double consonant", function() {
-    var string = "phoebe";
-    expect(japenesifyService.splitIntoSyllables(string, ruleJP)).toEqual(["phoe","be"]);
+    expect(japenesifyService.splitIntoSyllables("phoebe", ruleJP)).toEqual(["phoe","be"]);
   });
 
   it ('combines double consonants at the end of name', function() {
-    var string = "nick";
-    expect(japenesifyService.splitIntoSyllables(string, ruleJP)).toEqual(["ni","ck"]);
+    expect(japenesifyService.splitIntoSyllables("nick", ruleJP)).toEqual(["ni","ck"]);
+    expect(japenesifyService.splitIntoSyllables("mary", ruleJP)).toEqual(["ma","ry"]);
   });
 
   it ('convert an array of syllables to a japanese string', function() {
