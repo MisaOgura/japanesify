@@ -2,7 +2,7 @@ describe('japenesifyService', function (){
   beforeEach(module('japanesifyApp'));
 
   var japenesifyService, string;
-  var ruleJP = {regex: /(ll[aeiou])|([b-df-hj-np-tv-z][aeiou][rw])\b|(phoe)|([b-df-hj-np-tv-z][aeiou]{2})|([b-df-hj-np-tv-z]h[aeiou])|(nn[aeiou])|(ch(?![aeiou]))|(ch[aeiou])|([b-df-hj-np-tv-z][aeiou])|([b-df-hj-np-tv-z]{2})\b|([b-df-hj-npqstv-z])|([aeiou])/i,
+  var ruleJP = {regex: /(ll[aeiou])|([b-df-hj-np-tv-z]{2})\b|([b-df-hj-np-tv-z][aeiou][rw])(\b|(?![aeiouy]))|(phoe)|([b-df-hj-np-tv-z][aeou][aeiou])|([b-df-hj-np-tv-z]h[aeiou])|(nn[aeiou])|(ch(?![aeiou]))|(ch[aeiou])|([b-df-hj-np-tv-z][aeiou])|([b-df-hj-npqstv-z])|([aeiou])/i,
                 matcher: {'e'   : 'エ',
                                 'ri'  : 'リ',
                                 'ka'  : 'カ',
@@ -119,6 +119,15 @@ describe('japenesifyService', function (){
   it ('combines double consonants at the end of name', function() {
     expect(japenesifyService.splitIntoSyllables("nick", ruleJP)).toEqual(["ni","ck"]);
     expect(japenesifyService.splitIntoSyllables("mary", ruleJP)).toEqual(["ma","ry"]);
+  });
+
+  it ('combines double vowels if the first vowel is not "i"', function() {
+    expect(japenesifyService.splitIntoSyllables("claudia", ruleJP)).toEqual(["c", "lau","di", "a"]);
+    expect(japenesifyService.splitIntoSyllables("paul", ruleJP)).toEqual(["pau", "l"]);
+  });
+
+  it ('combines double vowels if the first vowel is "i"', function() {
+    expect(japenesifyService.splitIntoSyllables("gabrielle", ruleJP)).toEqual(["ga","b", "ri", "e", "lle"]);
   });
 
   it ('convert an array of syllables to a japanese string', function() {
