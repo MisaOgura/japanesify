@@ -4,10 +4,6 @@ describe ('japanesifyController', function(){
 
   var ctrl, TranslationFactory, object;
 
-  // beforeEach(function(){
-  //   TranslationFactory = jasmine.createSpyObj('TranslationFactory', ['translateWord']);
-  // });
-
   beforeEach(inject(function($controller){
     ctrl = $controller('japanesifyController');
     object = {};
@@ -16,7 +12,6 @@ describe ('japanesifyController', function(){
 
   it('saves a new translation object', function() {
     ctrl.newTranslation('Misa');
-    // var translation = new TranslationFactory('Misa');
     expect(ctrl.translationObj).toEqual(object);
   });
 });
