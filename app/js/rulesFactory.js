@@ -1,6 +1,6 @@
 japanesifyApp.factory('RulesFactory', function() {
   function RulesFactory() {
-    this.regex = /(ll)[aeiou]|[b-df-hj-np-tv-z][aeiou](r|w)\b|(phoe)|([b-df-hj-np-tv-z](i))(?!(e))|[b-df-hj-np-tv-z][aeiou]{2}|[b-df-hj-np-tv-z](h)[aeiou]|(nn)[aeiou]|(ch)(?![aeiou])|(ch)[aeiou]|[b-df-hj-np-tv-z][aeiou]|[b-df-hj-np-tv-z]|[aeiou]/i;
+    this.regex = /(ll[aeiou])|([b-df-hj-np-tv-z][aeiou]r|w)\b|(phoe)|([b-df-hj-np-tv-z][aeiou]{2})|([b-df-hj-np-tv-z]h[aeiou])|(nn[aeiou])|(ch(?![aeiou]))|(ch[aeiou])|([b-df-hj-np-tv-z][aeiou])|(ck)|([b-df-hj-npqstv-z])|([aeiou])/i;
     this.matcher = {'e'   : 'エ',
                     'ri'  : 'リ',
                     'ka'  : 'カ',
@@ -43,7 +43,14 @@ japanesifyApp.factory('RulesFactory', function() {
                     'chi' : 'チ',
                     'sha' : 'シェー',
                     'ne'  : 'ン',
-                    'phoe': 'フィー'
+                    'phoe': 'フィー',
+                    'rhi': 'リ',
+                    'nno': 'ノ',
+                    'ck': 'ック',
+                    'c': 'ク',
+                    'le': 'レ',
+                    'me': 'メ',
+                    'ce': 'ス'
                     };
   }
 
