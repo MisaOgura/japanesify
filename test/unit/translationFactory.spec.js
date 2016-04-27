@@ -6,11 +6,11 @@ describe ('TranslationFactory', function(){
 
   beforeEach(inject(function(_TranslationFactory_, _japanesifyService_){
     original = 'Misa';
-    translated = 'みさ';
+    translated = 'ミサ';
     TranslationFactory= _TranslationFactory_;
     japanesifyService = _japanesifyService_;
 
-    spyOn(japanesifyService, 'translateWord').and.returnValue('みさ');
+    spyOn(japanesifyService, 'translateWord').and.returnValue('ミサ');
     translation = new TranslationFactory(original);
   }));
 

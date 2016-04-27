@@ -1,4 +1,4 @@
-japanesifyApp.controller('japanesifyController', ['TranslationFactory', 'japanesifyService',function(TranslationFactory, japanesifyService){
+japanesifyApp.controller('japanesifyController', ['TranslationFactory', 'japanesifyService', 'rulesService',function(TranslationFactory, japanesifyService, rulesService){
   var vm = this;
 
   vm.newTranslation = function(name) {
