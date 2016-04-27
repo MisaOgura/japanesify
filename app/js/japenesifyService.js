@@ -15,7 +15,9 @@ japanesifyApp.service('japanesifyService', [function() {
   };
 
   function filterEmptyString(element) {
-    return element !== '';
+    if ((element !== '') | (element !== undefined)); {
+      return element;
+    }
   }
 
   self.translateWord =  function(string, ruleJP) {

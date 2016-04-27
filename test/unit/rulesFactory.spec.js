@@ -9,11 +9,11 @@ describe ('RulesFactory', function(){
   }));
 
   it('initialised with two rules', function() {
-    expect(rules.regex).toEqual({});
+    expect(rules.regex.constructor.name).toEqual("RegExp");
   });
 
   it('initialised with two rules', function() {
-    expect(rules.matcher).toEqual([]);
+    expect(rules.matcher.constructor.name).toEqual("Object");
   });
 
 });

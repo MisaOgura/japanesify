@@ -20,7 +20,7 @@ describe ('TranslationFactory', function(){
   });
 
   it('stores a Romanji string', function(){
-    expect(translation.romanji).toEqual(original);
+    expect(translation.romanji).toEqual(original.toLowerCase());
   });
 
   it('saves the Japanese translation', function() {
