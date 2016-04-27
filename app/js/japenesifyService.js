@@ -1,4 +1,4 @@
-japanesifyApp.service('japanesifyService', [function() {
+japanesifyApp.service('japanesifyService', ['rulesService',function(rulesService) {
   var self = this;
 
   self.splitIntoSyllables = function(string, ruleJP) {
@@ -20,8 +20,8 @@ japanesifyApp.service('japanesifyService', [function() {
     }
   }
 
-  self.translateWord =  function(string, ruleJP) {
-    var syllableArray = self.splitIntoSyllables(string, ruleJP);
-    return self.convertToJapanese(syllableArray, ruleJP);
+  self.translateWord =  function(string, rulesService) {
+    var syllableArray = self.splitIntoSyllables(string, rulesService);
+    return self.convertToJapanese(syllableArray, rulesService);
   };
 }]);
