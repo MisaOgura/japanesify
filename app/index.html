@@ -13,12 +13,18 @@
   </head>
 
   <body>
-      <div ng-controller="japanesifyController as ctrl">
+    <h1>Japanesify</h1>
+    <section ng-controller="japanesifyController as ctrl">
+      <section>
         <form>
-          <input type="text" id="input" ng-model="name">
+          <input type="text" id="input" ng-model="name" placeholder="e.g. Misa">
           <button id="submit" ng-click="ctrl.newTranslation(name)">Submit</button>
         </form>
+      </section>
+      <section>
+        <h2>Your name translates to:</h2>
         <h1 class="translation">{{ctrl.translationObj.japanese}}</h1>
-      </div>
+      </section>
+    </section>
   </body>
 </html>
