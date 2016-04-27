@@ -2,21 +2,21 @@ describe ('japanesifyController', function(){
 
   beforeEach(module('japanesifyApp'));
 
-  var ctrl, TranslationFactory;
+  var ctrl, TranslationFactory, object;
 
-  beforeEach(function(){
-    TranslationFactory = jasmine.createSpyObj('TranslationFactory', ['translateWord']);
-  });
+  // beforeEach(function(){
+  //   TranslationFactory = jasmine.createSpyObj('TranslationFactory', ['translateWord']);
+  // });
 
   beforeEach(inject(function($controller){
     ctrl = $controller('japanesifyController');
-    // translationFactory = _TranslationFactory_;
-
+    object = {};
+    spyOn(ctrl, '_createTranslationObj').and.returnValue(object);
   }));
 
-  xit('saves a new translation object', function() {
+  it('saves a new translation object', function() {
     ctrl.newTranslation('Misa');
-    var translation = new TranslationFactory('Misa');
-    expect(ctrl.translationObj).toEqual(translation);
+    // var translation = new TranslationFactory('Misa');
+    expect(ctrl.translationObj).toEqual(object);
   });
 });

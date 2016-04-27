@@ -2,7 +2,10 @@ japanesifyApp.controller('japanesifyController', ['TranslationFactory', 'japanes
   var vm = this;
 
   vm.newTranslation = function(name) {
-    vm.translationObj = new TranslationFactory(name);
+    vm.translationObj = vm._createTranslationObj(name);
   };
 
+  vm._createTranslationObj = function(name) {
+    return new TranslationFactory(name);
+  };
 }]);

@@ -3,58 +3,65 @@ describe('japanesifyService', function (){
 
   var japanesifyService;
   var string = 'caspar';
-  var ruleJP = {regex: /(ll[aeiou])|([b-df-hj-np-tv-z]{2})\b|([b-df-hj-np-tv-z][aeiou][rw])(\b|(?![aeiouy]))|([bdf-hj-np-tv-z]+[aeo][aeiou])|([b-df-hj-np-tv-z]h[aeiou])|(nn[aeiou])|\b(ch(?![aeiou]))|(ch[aeiou])|([b-df-hj-np-tv-z][aeiou])|([b-df-hj-npqstv-z])|([aeiou])/i,
-                matcher: {'e'   : 'エ',
-                                'ri'  : 'リ',
-                                'ka'  : 'カ',
-                                'mi'  : 'ミ',
-                                'sa'  : 'サ',
-                                'mu'  : 'ム',
-                                'lo'  : 'ロ',
-                                're'  : 'レ',
-                                'n'   : 'ン',
-                                'zo'  : 'ツォ',
-                                'to'  : 'ト',
-                                'be'  : 'ベ',
-                                'nna' : 'ナ',
-                                'ke'  : 'ケ',
-                                'vi'  : 'ヴィ',
-                                'ca'  : 'カ',
-                                's'   : 'ス',
-                                'par' : 'パー',
-                                'a'   : 'ア',
-                                'nne' : 'ン',
-                                'pe'  : 'ピー',
-                                'te'  : 'ト',
-                                'ch'  : 'ク',
-                                'jo'  : 'ジョー',
-                                'j'   : 'ジ',
-                                'di'  : 'ディ',
-                                'l'   : 'ル',
-                                'ya'  : 'ヤ',
-                                'ja'  : 'ジャ',
-                                'na'  : 'ナ',
-                                'si'  : 'サイ',
-                                'mo'  : 'モ',
-                                'ha'  : 'ハ',
-                                'ni'  : 'ニ',
-                                'f'   : 'フ',
-                                'pau' : 'ポー',
-                                'o'   : 'オ',
-                                'li'  : 'リ',
-                                'ver' : 'バー',
-                                'chi' : 'チ',
-                                'sha' : 'シェー',
-                                'ne'  : 'ン',
-                                'phoe': 'フィー',
-                                'rhi': 'リ',
-                                'nno': 'ノ',
-                                'ck': 'ック',
-                                'c': 'ク',
-                                'le': 'レ',
-                                'me': 'メ',
-                                'ce': 'ス'
-                                }};
+  var regexFunc = function() {
+    return /(ll[aeiou])|([b-df-hj-np-tv-z]{2})\b|([b-df-hj-np-tv-z][aeiou][rw])(\b|(?![aeiouy]))|([bdf-hj-np-tv-z]+[aeo][aeiou])|([b-df-hj-np-tv-z]h[aeiou])|(nn[aeiou])|\b(ch(?![aeiou]))|(ch[aeiou])|([b-df-hj-np-tv-z][aeiou])|([b-df-hj-npqstv-z])|([aeiou])/i
+  };
+  var matcherFunc = function() {
+    return {
+      'e'   : 'エ',
+      'ri'  : 'リ',
+      'ka'  : 'カ',
+      'mi'  : 'ミ',
+      'sa'  : 'サ',
+      'mu'  : 'ム',
+      'lo'  : 'ロ',
+      're'  : 'レ',
+      'n'   : 'ン',
+      'zo'  : 'ツォ',
+      'to'  : 'ト',
+      'be'  : 'ベ',
+      'nna' : 'ナ',
+      'ke'  : 'ケ',
+      'vi'  : 'ヴィ',
+      'ca'  : 'カ',
+      's'   : 'ス',
+      'par' : 'パー',
+      'a'   : 'ア',
+      'nne' : 'ン',
+      'pe'  : 'ピー',
+      'te'  : 'ト',
+      'ch'  : 'ク',
+      'jo'  : 'ジョー',
+      'j'   : 'ジ',
+      'di'  : 'ディ',
+      'l'   : 'ル',
+      'ya'  : 'ヤ',
+      'ja'  : 'ジャ',
+      'na'  : 'ナ',
+      'si'  : 'サイ',
+      'mo'  : 'モ',
+      'ha'  : 'ハ',
+      'ni'  : 'ニ',
+      'f'   : 'フ',
+      'pau' : 'ポー',
+      'o'   : 'オ',
+      'li'  : 'リ',
+      'ver' : 'バー',
+      'chi' : 'チ',
+      'sha' : 'シェー',
+      'ne'  : 'ン',
+      'phoe': 'フィー',
+      'rhi': 'リ',
+      'nno': 'ノ',
+      'ck': 'ック',
+      'c' : 'ク',
+      'le': 'レ',
+      'me': 'メ',
+      'ce': 'ス'
+      }
+    };
+
+  var ruleJP = { matcher : matcherFunc, regex : regexFunc }
 
   beforeEach(inject(function(_japanesifyService_){
     japanesifyService = _japanesifyService_;
@@ -62,18 +69,18 @@ describe('japanesifyService', function (){
 
   describe('#splitIntoSyllables', function (){
     it ('split string based on regex', function() {
-      expect(japanesifyService.splitIntoSyllables(string, ruleJP)).toEqual(["Ca","s","par"]);
+      expect(japanesifyService.splitIntoSyllables(string, ruleJP)).toEqual(["ca","s","par"]);
     });
   });
 
   describe('#convertToJapanese', function(){
     it ('convert an array of syllables to a japanese string', function() {
-      var array = ["Ca","s","par"];
+      var array = ["ca","s","par"];
       expect(japanesifyService.convertToJapanese(array, ruleJP)).toEqual('カスパー');
     });
   });
 
-  fdescribe('#translateWord', function(){
+  describe('#translateWord', function(){
     it ('returns translated string', function() {
       expect(japanesifyService.translateWord(string, ruleJP)).toEqual('カスパー');
     });
