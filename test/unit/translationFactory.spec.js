@@ -2,26 +2,28 @@ describe ('TranslationFactory', function(){
 
   beforeEach(module('japanesifyApp'));
 
-  var translation, original, translated, japanesifyService;
+  var original, translated ;
 
-  beforeEach(inject(function(TranslationFactory, _japanesifyService_){
+  beforeEach(inject(function(_TranslationFactory_, _japanesifyService_){
     original = 'Misa';
-    translated = 'みさ';
+    translated = 'みさ';    
+    TranslationFactory= _TranslationFactory_
+    japanesifyService = _japanesifyService_
+    
+    spyOn(japanesifyService, 'translateWord').and.returnValue('みさ');
     translation = new TranslationFactory(original);
-    japanesifyService = jasmine.createSpyObj('japanesifyService',['translateWord'])
   }));
+
+  it ('it can intialize a translation', function(){
+    translation = new TranslationFactory(original)
+    expect(translation instanceof TranslationFactory).toBe(true)
+  })
 
   it('stores a Romanji string', function(){
     expect(translation.romanji).toEqual(original);
   });
 
   it('saves the Japanese translation', function() {
-    spyOn(japanesifyService, 'translateWord').andReturnValue(translated)
-
     expect(translation.japanese).toEqual(translated);
   });
-
-
-
-
 });

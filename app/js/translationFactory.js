@@ -5,8 +5,8 @@ japanesifyApp.factory('TranslationFactory', ['japanesifyService', function(japan
       this.japanese = translate(this.romanjiName);
    }
 
-   function translate(name) {
-      return japanesifyService.translateWord(name);
+   function translate(string) {
+      return japanesifyService.translateWord(string);
    }
 
    return TranslationFactory;

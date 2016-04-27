@@ -18,7 +18,7 @@ japanesifyApp.service('japanesifyService', [function() {
     return element !== '';
   }
 
-  function translateWord() {
-    console.log('yeah');
+  self.translateWord =  function(string) {
+    return string
   }
 }]);
