@@ -1,6 +1,6 @@
 japanesifyApp.factory('RulesFactory', function() {
   function RulesFactory() {
-    this.regex = /(ll[aeiou])|([b-df-hj-np-tv-z][aeiou]r|w)\b|(phoe)|([b-df-hj-np-tv-z][aeiou]{2})|([b-df-hj-np-tv-z]h[aeiou])|(nn[aeiou])|(ch(?![aeiou]))|(ch[aeiou])|([b-df-hj-np-tv-z][aeiou])|(ck)|([b-df-hj-npqstv-z])|([aeiou])/i;
+    this.regex = /(ll[aeiou])|([b-df-hj-np-tv-z][aeiou]r|w)\b|(phoe)|([b-df-hj-np-tv-z][aeiou]{2})|([b-df-hj-np-tv-z]h[aeiou])|(nn[aeiou])|(ch(?![aeiou]))|(ch[aeiou])|([b-df-hj-np-tv-z][aeiou])|([b-df-hj-np-tv-z]{2})\b|([b-df-hj-npqstv-z])|([aeiou])/i;
     this.matcher = {'e'   : 'エ',
                     'ri'  : 'リ',
                     'ka'  : 'カ',

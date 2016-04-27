@@ -109,6 +109,11 @@ describe('japenesifyService', function (){
     expect(japenesifyService.splitIntoSyllables(string, ruleJP)).toEqual(["phoe","be"]);
   });
 
+  it ('combines double consonants at the end of name', function() {
+    var string = "nick";
+    expect(japenesifyService.splitIntoSyllables(string, ruleJP)).toEqual(["ni","ck"]);
+  });
+
   it ('convert an array of syllables to a japanese string', function() {
     var array = ["ca","s","par"];
     expect(japenesifyService.convertToJapanese(array, ruleJP)).toEqual('カスパー');
