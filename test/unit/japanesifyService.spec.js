@@ -2,8 +2,7 @@ describe('japanesifyService', function (){
   beforeEach(module('japanesifyApp'));
 
   var japanesifyService;
-  var string = 'caspar';
-  
+
   var matcherFunc = function() {
     return {'a'   : 'ア',
             'e'   : 'エ',
@@ -77,6 +76,39 @@ describe('japanesifyService', function (){
 
   var ruleJP = { matcher : matcherFunc};
 
+  var names = [{string:"caspar",   array: ["ca","s","par"],          japanese: 'カスパー'},
+               {string:"misa",     array: ["mi","sa"]},
+               {string:"erika",    array:["e", "ri","ka"]},
+               {string:"murilo",   array:["mu", "ri","lo"]},
+               {string:"pete",     array:["pe", "te"]},
+               {string:"lorenzo",  array:["lo","re","n", "zo"]},
+               {string:"kevin",    array:["ke","vi","n"]},
+               {string:"simon",    array:["si","mo","n"]},
+               {string:"yasmin",   array:["ya","s","mi", "n"]},
+               {string:"sachin",   array:["sa","chi", "n"]},
+               {string:"rhiannon", array:["rhi","a", "nno", "n"]},
+               {string:"junyuan",  array:["ju", "n", "yu", "a", "n"]},
+               {string:"tobenna",  array:["to","be","nna"]},
+               {string:"anne",     array:["a","nne"]},
+               {string:"jasmina",  array:["ja","s","mi", "na"]},
+               {string:"oliver",   array:["o","li","ver"]},
+               {string:"andrew",   array:["a","n","d", "rew"]},
+               {string:"chris",    array:["ch","ri","s"]},
+               {string:"kyle",     array:["k","y","le"]},
+               {string:"shane",    array:["sha","ne"]},
+               {string:"adil",     array:["a","di","l"]},
+               {string:"joj",      array:["jo","j"]},
+               {string:"hanif",    array:["ha","ni","f"]},
+               {string:"nick",     array:["ni","ck"]},
+               {string:"mary",     array:["ma","ry"]},
+               {string:"claudia",  array:["c", "lau","di", "a"]},
+               {string:"paul",     array:["pau", "l"]},
+               {string:"gabrielle",array:["ga","b", "ri", "e", "lle"]},
+               {string:"patrizio", array:["pa","t", "ri", "zi", "o"]},
+              //  {string:"phoebe",   array:["phoe","be"]},
+              //  {string:"harsheet", array:["har", "shee", "t"]}
+             ];
+
   beforeEach(inject(function(_japanesifyService_, _rulesService_){
     japanesifyService = _japanesifyService_;
     rulesService = _rulesService_;
@@ -85,88 +117,24 @@ describe('japanesifyService', function (){
 
   describe('#splitIntoSyllables', function (){
     it ('split string based on regex', function() {
-      expect(japanesifyService.splitIntoSyllables(string, rulesService)).toEqual(["ca","s","par"]);
-    });
-    it ('combines a vowel with a preceding consonant', function() {
-      expect(japanesifyService.splitIntoSyllables("misa", rulesService)).toEqual(["mi","sa"]);
-      expect(japanesifyService.splitIntoSyllables("erika", rulesService)).toEqual(["e", "ri","ka"]);
-      expect(japanesifyService.splitIntoSyllables("murilo", rulesService)).toEqual(["mu", "ri","lo"]);
-      expect(japanesifyService.splitIntoSyllables("pete", rulesService)).toEqual(["pe", "te"]);
-    });
-    it ("slices an 'n' out if it precedes a consonant", function() {
-      expect(japanesifyService.splitIntoSyllables("lorenzo", rulesService)).toEqual(["lo","re","n", "zo"]);
-    });
-
-    it ("slices an 'n' out if it's the last letter", function() {
-      expect(japanesifyService.splitIntoSyllables("kevin", rulesService)).toEqual(["ke","vi","n"]);
-      expect(japanesifyService.splitIntoSyllables("simon", rulesService)).toEqual(["si","mo","n"]);
-      expect(japanesifyService.splitIntoSyllables("yasmin", rulesService)).toEqual(["ya","s","mi", "n"]);
-      expect(japanesifyService.splitIntoSyllables("sachin", rulesService)).toEqual(["sa","chi", "n"]);
-      expect(japanesifyService.splitIntoSyllables("rhiannon", rulesService)).toEqual(["rhi","a", "nno", "n"]);
-      expect(japanesifyService.splitIntoSyllables("junyuan", rulesService)).toEqual(["ju", "n", "yu", "a", "n"]);
-    });
-
-    it ("combines a double 'n' and a following vowel", function() {
-      expect(japanesifyService.splitIntoSyllables("tobenna", rulesService)).toEqual(["to","be","nna"]);
-      expect(japanesifyService.splitIntoSyllables("anne", rulesService)).toEqual(["a","nne"]);
-    });
-
-    it ("slices an 's' out it precedes a consonant", function() {
-      expect(japanesifyService.splitIntoSyllables("jasmina", rulesService)).toEqual(["ja","s","mi", "na"]);
-    });
-
-    it ("combines the last 'r'/'w' with a preceding vowel or contonant/vowel pair", function() {
-      expect(japanesifyService.splitIntoSyllables("oliver", rulesService)).toEqual(["o","li","ver"]);
-      expect(japanesifyService.splitIntoSyllables("andrew", rulesService)).toEqual(["a","n","d", "rew"]);
-    });
-
-    it ("recognises double consonants in the beggining of name if it's followed by a consonant", function() {
-      expect(japanesifyService.splitIntoSyllables("chris", rulesService)).toEqual(["ch","ri","s"]);
-      expect(japanesifyService.splitIntoSyllables("kyle", rulesService)).toEqual(["k","y","le"]);
-    });
-
-    it ("recognises 'sh' and combines it with a following vowel", function() {
-      expect(japanesifyService.splitIntoSyllables("shane", rulesService)).toEqual(["sha","ne"]);
-    });
-
-    it ("splits a consonant if it's the last letter, expecpt for 'r'", function() {
-      var string = "adil";
-      expect(japanesifyService.splitIntoSyllables("adil", rulesService)).toEqual(["a","di","l"]);
-      expect(japanesifyService.splitIntoSyllables("joj", rulesService)).toEqual(["jo","j"]);
-      expect(japanesifyService.splitIntoSyllables("hanif", rulesService)).toEqual(["ha","ni","f"]);
-    });
-
-    it ("recognise and split 'ph' followed by a double consonant", function() {
-      // expect(japanesifyService.splitIntoSyllables("phoebe", rulesService)).toEqual(["phoe","be"]);
-    });
-
-    it ('combines double consonants at the end of name', function() {
-      expect(japanesifyService.splitIntoSyllables("nick", rulesService)).toEqual(["ni","ck"]);
-      expect(japanesifyService.splitIntoSyllables("mary", rulesService)).toEqual(["ma","ry"]);
-    });
-
-    it ('combines double vowels if the first vowel is not "i"', function() {
-      expect(japanesifyService.splitIntoSyllables("claudia", rulesService)).toEqual(["c", "lau","di", "a"]);
-      expect(japanesifyService.splitIntoSyllables("paul", rulesService)).toEqual(["pau", "l"]);
-      // expect(japanesifyService.splitIntoSyllables("harsheet", rulesService)).toEqual(["har", "shee", "t"]);
-    });
-
-    it ('combines double vowels if the first vowel is "i"', function() {
-      expect(japanesifyService.splitIntoSyllables("gabrielle", rulesService)).toEqual(["ga","b", "ri", "e", "lle"]);
-      expect(japanesifyService.splitIntoSyllables("patrizio", rulesService)).toEqual(["pa","t", "ri", "zi", "o"]);
+      names.forEach(function(name){
+        expect(japanesifyService.splitIntoSyllables(name.string, rulesService)).toEqual(name.array);
+      });
     });
   });
 
   describe('#convertToJapanese', function(){
     it ('convert an array of syllables to a japanese string', function() {
-      var array = ["ca","s","par"];
-      expect(japanesifyService.convertToJapanese(array, ruleJP)).toEqual('カスパー');
+      expect(japanesifyService.convertToJapanese(["ca","s","par"], ruleJP)).toEqual('カスパー');
+      // names.forEach(function(name){
+      //   expect(japanesifyService.convertToJapanese(name.array, rulesService)).toEqual(name.japanese);
+      // });
     });
   });
 
   describe('#translateWord', function(){
     it ('returns translated string', function() {
-      expect(japanesifyService.translateWord(string, ruleJP)).toEqual('カスパー');
+      expect(japanesifyService.translateWord("caspar", ruleJP)).toEqual('カスパー');
     });
   });
 

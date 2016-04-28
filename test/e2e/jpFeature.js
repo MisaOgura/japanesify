@@ -4,9 +4,9 @@ describe ('JP converter', function(){
     browser.get('/');
     $('#input').sendKeys('Misa');
     $('#submit').click();
-    var output = $('.translation')
+    var output = $('.translation');
 
-    expect(output.getText()).toMatch('ミサ')
-  })
+    expect(output.getText()).toMatch('ミサ');
+  });
 
-})
+});

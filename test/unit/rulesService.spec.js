@@ -16,14 +16,6 @@ describe ('rulesService', function(){
     expect(rulesService.matcher().constructor.name).toEqual("Object");
   });
 
-  // describe('#oneCharSyllables', function(){
-  //   it('returns the letter when a syllable starts with a vowel or consonant', function() {
-  //     var rule = rulesService.oneCharSyllables();
-  //     expect(_returnMatch('erika', rule)).toEqual("e");
-  //     expect(_returnMatch('caspar', rule)).toEqual("c");
-  //   });
-  // });
-
   describe('#twoCharSyllables', function(){
     it('returns the pair when the name matches the rule', function(){
       var rule = rulesService.twoCharSyllables();

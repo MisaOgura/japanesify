@@ -4,10 +4,6 @@ japanesifyApp.service('rulesService', ['CONVERSION_CONSTANT', function(CONVERSIO
     return CONVERSION_CONSTANT;
   };
 
-  // this.oneCharSyllables = function(){
-  //   return /^([aeiou]|[b-df-hj-npqstv-z])/i;
-  // };
-
   var consVowel = '[b-df-hj-np-tv-z][aeiou]';
   var doubleCons = '[b-df-hj-np-tv-z]{2}\\b';
   var startsCHCons = '\\bch(?![aeiou])';
