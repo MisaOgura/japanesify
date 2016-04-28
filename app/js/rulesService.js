@@ -59,11 +59,24 @@ japanesifyApp.service('rulesService', function() {
   //   return /^([aeiou]|[b-df-hj-npqstv-z])/i;
   // };
 
+  var consVowel = '[b-df-hj-np-tv-z][aeiou]';
+  var doubleCons = '[b-df-hj-np-tv-z]{2}\\b';
+  var startsCHCons = '\\bch(?![aeiou])';
+  var consHVowel = '[b-df-hj-np-tv-z]h[aeiou]';
+  var consDoubleVowel = '[bdf-hj-np-tv-z]+[aeo][aeiu]';
+  var consVowelRWY = '[b-df-hj-np-tv-z][aeiou][rwy](\\b|(?![aeiouy]))';
+  var doubleLNVowel = '[ln]{2}[aeiou]';
+
   this.twoCharSyllables = function(name){
-    return /^([b-df-hj-np-tv-z][aeiou]|[b-df-hj-np-tv-z]{2}\b|\bch(?![aeiou]))/;
+    return new RegExp('^'+'('+consVowel+'|'+
+                              doubleCons+'|'+
+                              startsCHCons+')', 'i');
   };
 
   this.threeCharSyllables = function(name){
-    return /^([b-df-hj-np-tv-z]h[aeiou]|[bdf-hj-np-tv-z]+[aeo][aeiu]|[b-df-hj-np-tv-z][aeiou][rwy](\b|(?![aeiouy]))|[ln]{2}[aeiou])/i;
+    return new RegExp('^'+'('+consHVowel+'|'+
+                              consDoubleVowel+'|'+
+                              consVowelRWY+'|'+
+                              doubleLNVowel+')', 'i');
   };
 });
