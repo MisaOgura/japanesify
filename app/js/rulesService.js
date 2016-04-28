@@ -1,6 +1,6 @@
 japanesifyApp.service('rulesService', function() {
   this.regex = function() {
-    return /(ll[aeiou])|([b-df-hj-np-tv-z][aeiou]r|w)\b|(phoe)|([b-df-hj-np-tv-z][aeiou]{2})|([b-df-hj-np-tv-z]h[aeiou])|(nn[aeiou])|(ch(?![aeiou]))|(ch[aeiou])|([b-df-hj-np-tv-z][aeiou])|([b-df-hj-np-tv-z]{2})\b|([b-df-hj-npqstv-z])|([aeiou])/i;
+    return /([b-df-hj-np-tv-z]{2})\b|([b-df-hj-np-tv-z][aeiou][rwy])(\b|(?![aeiouy]))|([bdf-hj-np-tv-z]+[aeo][aeiu])|([b-df-hj-np-tv-z]h[aeiou])|([ln]{2}[aeiou])|\b(ch(?![aeiou]))|([b-df-hj-np-tv-z][aeiou])|([b-df-hj-npqstv-z])|([aeiou])/i;
   };
 
   this.matcher = function() {
@@ -59,12 +59,16 @@ japanesifyApp.service('rulesService', function() {
   };
 
   this.oneCharSyllables = function(){
-    if(){
-      return true;
-    }
+    return /[aeiou]|[b-df-hj-npqstv-z]/i;
   };
 
+  this.twoCharSyllables = function(name){
+    return /[b-df-hj-np-tv-z][aeiou]|[b-df-hj-np-tv-z]{2}\b|\bch(?![aeiou])/;
+  };
 
+  this.threeCharSyllables = function(name){
+    return /[b-df-hj-np-tv-z]h[aeiou]|[bdf-hj-np-tv-z]+[aeo][aeiu]|[b-df-hj-np-tv-z][aeiou][rwy](\b|(?![aeiouy]))|[ln]{2}[aeiou]/i;
+  };
 });
 
 // * 1 syllable
