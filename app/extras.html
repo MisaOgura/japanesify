@@ -18,9 +18,10 @@
         <button id="submit" ng-click="ctrl.newTranslation(name)">Submit</button>
         <h1 class="translation">{{ctrl.translationObj.japanese}}</h1>
         <h2>Previous searches:</h2>
-        <ul ng-repeat="translation in ctrl.allTranslations">
-          <li>
-            {{ translation.romanji }}: {{ translation.japanese }} 
+        <ul>
+          <li ng-repeat="translation in ctrl.allTranslations">
+            {{ translation.romanji }}: <span id="translation-{{$index}}">{{ translation.japanese }}</span>
+            <a href="#" ng-click="ctrl.printId($index);">print</a>
           </li>
         </ul>
       </div>
