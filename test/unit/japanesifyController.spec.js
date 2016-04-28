@@ -14,4 +14,10 @@ describe ('japanesifyController', function(){
     ctrl.newTranslation('Misa');
     expect(ctrl.translationObj).toEqual(object);
   });
+
+  it('stores all past translation requests', function() {
+    ctrl.newTranslation('misa');
+    ctrl.newTranslation('caspar');
+    expect(ctrl.allTranslations).toEqual([object, object])
+  });
 });
