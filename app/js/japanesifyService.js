@@ -2,8 +2,19 @@ japanesifyApp.service('japanesifyService', ['rulesService',function(rulesService
   var self = this;
 
   self.splitIntoSyllables = function(string, ruleJP) {
-    var array = string.split(ruleJP.regex());
-    return array.filter(filterEmptyString);
+    var matchedSyllables= [];
+    var match = string.slice(0, 4).match(ruleJP.threeCharSyllables())[0];
+    var lessString = string.replace(match, '');
+    console.log(match);
+    console.log(lessString);
+    matchedSyllables.push(match);
+    if (lessString.length === 1) {
+      matchedSyllables.push(lessString);
+    }
+    return matchedSyllables;
+
+
+    // return ['rhi', 'a'];
   };
 
   self.convertToJapanese = function(array, ruleJP) {

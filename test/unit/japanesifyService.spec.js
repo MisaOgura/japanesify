@@ -102,4 +102,10 @@ describe('japanesifyService', function (){
       expect(japanesifyService.translateWord(string, ruleJP)).toEqual('カスパー');
     });
   });
+
+  fdescribe('#translateWord', function() {
+    it ('return the first three chars', function() {
+      expect(japanesifyService.translateWord('rhia', rulesService)).toEqual('リア');
+    });
+  });
 });
