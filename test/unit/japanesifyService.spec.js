@@ -103,8 +103,8 @@ describe('japanesifyService', function (){
     });
   });
 
-  fdescribe('#translateWord', function() {
-    it ('returns a correct array for four letters', function() {
+  describe('#translateWord', function() {
+    fit ('returns a correct array for four letters', function() {
       expect(japanesifyService.translateWord('rhia', rulesService)).toEqual('リア');
     });
     it ('returns a correct array for rhiannon', function() {

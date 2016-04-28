@@ -12,15 +12,31 @@ japanesifyApp.service('japanesifyService', ['rulesService',function(rulesService
 
   function _matchRules(string, ruleJP) {
     var slicedString = string.slice(0, 4);
-    var match = slicedString.match(ruleJP.threeCharSyllables())[0];
-    var lessString = string.replace(match, '');
-    matchedSyllables.push(match);
-    while (lessString > 1) {
+    console.log("string", string);
+
+    var result;
+    if (result = slicedString.match(ruleJP.threeCharSyllables())[0]) { //
+      console.log("SHOLD", slicedString);
+      console.log("3", string);
+
+      matchedSyllables.push(result);
+    } else if (result = slicedString.match(ruleJP.twoCharSyllables())[0]) {
+      console.log("two", string);
+
+      matchedSyllables.push(result);
+    } else {
+      if (string.length === 1) {
+        console.log("one", string);
+        matchedSyllables.push(string);
+
+      }
+    }
+    console.log(string);
+    var lessString = string.replace(result, '');
+    while (lessString.length > 0) {
       _matchRules(lessString, ruleJP);
     }
-    if (lessString.length === 1) {
-      matchedSyllables.push(lessString);
-    }
+
   };
 
   self.convertToJapanese = function(array, ruleJP) {
