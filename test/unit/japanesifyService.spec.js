@@ -82,11 +82,14 @@ describe('japanesifyService', function (){
   beforeEach(inject(function(_japanesifyService_, _rulesService_){
     japanesifyService = _japanesifyService_;
     rulesService = _rulesService_;
+    spyOn(rulesService, 'threeCharSyllables').and.returnValue(/^([b-df-hj-np-tv-z]h[aeiou]|[bdf-hj-np-tv-z]+[aeo][aeiu]|[b-df-hj-np-tv-z][aeiou][rwy](\b|(?![aeiouy]))|[ln]{2}[aeiou])/i);
+    // spyOn(rulesService, 'matcher').and.returnValue(matcherFunc);
+    // spyOn(rulesService, 'regex').and.returnValue(regexFunc);
   }));
 
   describe('#splitIntoSyllables', function (){
     it ('split string based on regex', function() {
-      expect(japanesifyService.splitIntoSyllables(string, ruleJP)).toEqual(["ca","s","par"]);
+      expect(japanesifyService.splitIntoSyllables(string, rulesService)).toEqual(["ca","s","par"]);
     });
   });
 
@@ -104,7 +107,7 @@ describe('japanesifyService', function (){
   });
 
   describe('#translateWord', function() {
-    fit ('returns a correct array for four letters', function() {
+    it ('returns a correct array for four letters', function() {
       expect(japanesifyService.translateWord('rhia', rulesService)).toEqual('リア');
     });
     it ('returns a correct array for rhiannon', function() {

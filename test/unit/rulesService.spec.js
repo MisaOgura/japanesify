@@ -44,8 +44,8 @@ describe ('rulesService', function(){
       expect(_returnMatch('rhiannon', rule)).toEqual("rhi");
       expect(_returnMatch('shane', rule)).toEqual("sha");
       expect(_returnMatch('paul', rule)).toEqual("pau");
-      expect(_returnMatch('caspar', rule)).toEqual("par");
-      expect(_returnMatch('tobenna', rule)).toEqual("nna");
+      expect(_returnMatch('par', rule)).toEqual("par");
+      expect(_returnMatch('nna', rule)).toEqual("nna");
     });
   });
 

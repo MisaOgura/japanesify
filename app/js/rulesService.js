@@ -59,15 +59,15 @@ japanesifyApp.service('rulesService', function() {
   };
 
   this.oneCharSyllables = function(){
-    return /[aeiou]|[b-df-hj-npqstv-z]/i;
+    return /^([aeiou]|[b-df-hj-npqstv-z])/i;
   };
 
   this.twoCharSyllables = function(name){
-    return /[b-df-hj-np-tv-z][aeiou]|[b-df-hj-np-tv-z]{2}\b|\bch(?![aeiou])/;
+    return /^([b-df-hj-np-tv-z][aeiou]|[b-df-hj-np-tv-z]{2}\b|\bch(?![aeiou]))/;
   };
 
   this.threeCharSyllables = function(name){
-    return /[b-df-hj-np-tv-z]h[aeiou]|[bdf-hj-np-tv-z]+[aeo][aeiu]|[b-df-hj-np-tv-z][aeiou][rwy](\b|(?![aeiouy]))|[ln]{2}[aeiou]/i;
+    return /^([b-df-hj-np-tv-z]h[aeiou]|[bdf-hj-np-tv-z]+[aeo][aeiu]|[b-df-hj-np-tv-z][aeiou][rwy](\b|(?![aeiouy]))|[ln]{2}[aeiou])/i;
   };
 });
 

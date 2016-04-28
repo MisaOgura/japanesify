@@ -15,29 +15,35 @@ japanesifyApp.service('japanesifyService', ['rulesService',function(rulesService
     console.log("string", string);
 
     var result;
-    if (result = slicedString.match(ruleJP.threeCharSyllables())[0]) { //
+
+    console.log('matches 3char',!!slicedString.match(ruleJP.threeCharSyllables()));
+    console.log('matches 2char',!!slicedString.match(ruleJP.twoCharSyllables()));
+
+    if (string.length === 1) {
+      console.log("one", string);
+      result = string;
+      matchedSyllables.push(string);
+    } else if(!!slicedString.match(ruleJP.threeCharSyllables())) {
       console.log("SHOLD", slicedString);
       console.log("3", string);
-
+      result = slicedString.match(ruleJP.threeCharSyllables())[0];
       matchedSyllables.push(result);
-    } else if (result = slicedString.match(ruleJP.twoCharSyllables())[0]) {
+    } else if (!!slicedString.match(ruleJP.twoCharSyllables())){
       console.log("two", string);
-
+      result = slicedString.match(ruleJP.twoCharSyllables())[0];
       matchedSyllables.push(result);
     } else {
-      if (string.length === 1) {
-        console.log("one", string);
-        matchedSyllables.push(string);
-
-      }
+      result = string[0];
+      matchedSyllables.push(result);
     }
     console.log(string);
-    var lessString = string.replace(result, '');
-    while (lessString.length > 0) {
-      _matchRules(lessString, ruleJP);
+    reducedString = string.replace(result, '');
+    console.log('endString', reducedString);
+    while (reducedString.length > 0) {
+      _matchRules(reducedString, ruleJP);
     }
 
-  };
+  }
 
   self.convertToJapanese = function(array, ruleJP) {
     var matcher = ruleJP.matcher();
