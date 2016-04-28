@@ -1,20 +1,26 @@
 japanesifyApp.service('japanesifyService', ['rulesService',function(rulesService) {
   var self = this;
+  var matchedSyllables= [];
 
   self.splitIntoSyllables = function(string, ruleJP) {
-    var matchedSyllables= [];
-    var match = string.slice(0, 4).match(ruleJP.threeCharSyllables())[0];
-    var lessString = string.replace(match, '');
-    console.log(match);
-    console.log(lessString);
-    matchedSyllables.push(match);
-    if (lessString.length === 1) {
-      matchedSyllables.push(lessString);
-    }
+    _matchRules(string, ruleJP);
     return matchedSyllables;
 
 
     // return ['rhi', 'a'];
+  };
+
+  function _matchRules(string, ruleJP) {
+    var slicedString = string.slice(0, 4);
+    var match = slicedString.match(ruleJP.threeCharSyllables())[0];
+    var lessString = string.replace(match, '');
+    matchedSyllables.push(match);
+    while (lessString > 1) {
+      _matchRules(lessString, ruleJP);
+    }
+    if (lessString.length === 1) {
+      matchedSyllables.push(lessString);
+    }
   };
 
   self.convertToJapanese = function(array, ruleJP) {

@@ -104,8 +104,11 @@ describe('japanesifyService', function (){
   });
 
   fdescribe('#translateWord', function() {
-    it ('return the first three chars', function() {
+    it ('returns a correct array for four letters', function() {
       expect(japanesifyService.translateWord('rhia', rulesService)).toEqual('リア');
+    });
+    it ('returns a correct array for rhiannon', function() {
+      expect(japanesifyService.translateWord('rhiannon', rulesService)).toEqual('リアノン');
     });
   });
 });
