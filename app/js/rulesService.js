@@ -1,0 +1,85 @@
+japanesifyApp.service('rulesService', function() {
+  this.regex = function() {
+    return /(ll[aeiou])|([b-df-hj-np-tv-z][aeiou]r|w)\b|(phoe)|([b-df-hj-np-tv-z][aeiou]{2})|([b-df-hj-np-tv-z]h[aeiou])|(nn[aeiou])|(ch(?![aeiou]))|(ch[aeiou])|([b-df-hj-np-tv-z][aeiou])|([b-df-hj-np-tv-z]{2})\b|([b-df-hj-npqstv-z])|([aeiou])/i;
+  };
+
+  this.matcher = function() {
+    return {
+      'e'   : 'エ',
+      'ri'  : 'リ',
+      'ka'  : 'カ',
+      'mi'  : 'ミ',
+      'sa'  : 'サ',
+      'mu'  : 'ム',
+      'lo'  : 'ロ',
+      're'  : 'レ',
+      'n'   : 'ン',
+      'zo'  : 'ツォ',
+      'to'  : 'ト',
+      'be'  : 'ベ',
+      'nna' : 'ナ',
+      'ke'  : 'ケ',
+      'vi'  : 'ヴィ',
+      'ca'  : 'カ',
+      's'   : 'ス',
+      'par' : 'パー',
+      'a'   : 'ア',
+      'nne' : 'ン',
+      'pe'  : 'ピー',
+      'te'  : 'ト',
+      'ch'  : 'ク',
+      'jo'  : 'ジョー',
+      'j'   : 'ジ',
+      'di'  : 'ディ',
+      'l'   : 'ル',
+      'ya'  : 'ヤ',
+      'ja'  : 'ジャ',
+      'na'  : 'ナ',
+      'si'  : 'サイ',
+      'mo'  : 'モ',
+      'ha'  : 'ハ',
+      'ni'  : 'ニ',
+      'f'   : 'フ',
+      'pau' : 'ポー',
+      'o'   : 'オ',
+      'li'  : 'リ',
+      'ver' : 'バー',
+      'chi' : 'チ',
+      'sha' : 'シェー',
+      'ne'  : 'ン',
+      'phoe': 'フィー',
+      'rhi': 'リ',
+      'nno': 'ノ',
+      'ck': 'ック',
+      'c': 'ク',
+      'le': 'レ',
+      'me': 'メ',
+      'ce': 'ス'
+    };
+  };
+
+  this.oneCharSyllables = function(){
+    if(){
+      return true;
+    }
+  };
+
+
+});
+
+// * 1 syllable
+//   - dingle vowel = ([aeiou])
+//   - single consonant  = ([b-df-hj-npqstv-z])
+//
+// * 2 syllebles
+//   - a consonant + vowel pair = ([b-df-hj-np-tv-z][aeiou])
+//   - ends with a double consonant = ([b-df-hj-np-tv-z]{2})\b
+//   - starts with CH and followed by a consonant = \b(ch(?![aeiou]))
+//
+//
+// * 3 syllables
+//   - dounle N or L followed by a vowel = ([ln]{2}[aeiou])
+//   - a consonant followed by h followed by a vowel = ([b-df-hj-np-tv-z]h[aeiou])
+//   - a consonant followed by a vowel followed by either r/w/y,
+//       if at the end of the name or followed by a consonant = ([b-df-hj-np-tv-z][aeiou][rwy])(\b|(?![aeiouy]))
+//   - a consonant followed by a specified double vowel = ([bdf-hj-np-tv-z]+[aeo][aeiu])
