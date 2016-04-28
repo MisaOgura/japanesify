@@ -4,6 +4,16 @@
     <meta charset="utf-8">
     <title>Japanesify</title>
     <link rel="stylesheet" href="assets/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/stylesheet.css" type="text/css">
+
+    <link href='https://fonts.googleapis.com/css?family=Aladin' rel='stylesheet' type='text/css'>
+
+    <link href='https://fonts.googleapis.com/css?family=Advent+Pro:400,100,300' rel='stylesheet' type='text/css'>
+ 
+    <link href="https://s3-us-west-2.amazonaws.com/japanfonts/Ming+Imperial.TTF" rel="stylesheet" type="text/css">
+
+     <link href="https://s3-us-west-2.amazonaws.com/japanfonts/Brushido.ttf" rel="stylesheet" type="text/css">
+
     <script src="bower_components/angular/angular.js"></script>
     <script src="js/app.js"></script>
     <script src="js/japanesifyController.js"></script>
@@ -14,10 +24,23 @@
   </head>
 
   <body>
-      <div ng-controller="japanesifyController as ctrl">
-        <input id="input" ng-model="name">
-        <button id="submit" ng-click="ctrl.newTranslation(name)">Submit</button>
-          <h1 class="translation">{{ctrl.translationObj.japanese}}</h1>
-      </div>
+    <main>
+      <h1>Japanesify</h1>
+
+      <section class="box" ng-controller="japanesifyController as ctrl">
+        <section>
+          <h2 >Please enter your name below:</h2>
+          <form>
+            <input id='input' type="text" ng-model="name" placeholder="e.g. Misa">
+            <button id="submit" ng-click="ctrl.newTranslation(name)">Submit</button>
+          </form>
+        </section>
+        <section class="translationSection">
+        <hr>
+          <h3 ng-show="ctrl.translationObj.japanese">Your name translates to:</h2>
+          <section class="translation">{{ctrl.translationObj.japanese}}</section>
+        </section>
+      </section>
+    </main>
   </body>
 </html>
