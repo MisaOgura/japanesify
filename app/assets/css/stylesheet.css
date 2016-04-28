@@ -1,46 +1,86 @@
 body {
-  text-align: center;
+  background-image: url("/assets/images/cherryblossom.JPG");
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: #FFF3F3;
 }
 
 
-header {
-  background-image: url("/assets/images/cherryblossom2.JPG");
-  background-size: 100%;
-  height:300px;
-  padding: 80px;
-  -webkit-box-sizing: border-box;
-   -moz-box-sizing: border-box;
-        box-sizing: border-box;
-}
-
 h1 {
-  font-size:100px;
+  text-align: center;
+  margin:auto;
+  padding:1.5em 0em 0.6em 0em;
+  font-size:110px;
   text-shadow: 4px 2px #D0A2A2;
   color: white;
   font-family: 'Aladin', sans-serif;
+  
+
 }
 
-main {
+.box {
+  margin:auto;
+  padding:0.5em;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 50; 
+  max-width: 31em;
   color: #702F2F;
-  font-family: 'Bree Serif', sans-serif;
+  font-family: 'Avent Pro', sans-serif;
+  font-weight: 300;
+}
+
+form{
+  max-width:30em;
+  padding-top: 1em;
+}
+
+section.translationSection {
+margin-top:1em;
 }
 
 h2 {
+  text-align: left;
   font-size: 35px;
 }
 
-b {
-  font-size: 100px;
+h3 {
+  text-align: left;
+  font-size: 25px;
+}
+
+.translation {
+  padding-top: 20px;
+  font-size: 80px;
+  color: black;
+  text-align: center;
+  font-family: 'Ming Imperial';
+}
+
+ {
+  padding-top: 1em;
+  font-size: 70px;
 }
 
 input {
-  font-family: 'Bree Serif', sans-serif;
+  width: 340px;
+  height:1.2em;
   font-size: 20px;
+  padding:0.2em 0em 0.2em 0.3em;
+  font-family: 'Avent Pro', sans-serif;
+  font-weight: 300;
+  border:0;
+  position: inline-block;
+
 }
 
 button {
-  background-image: url("/assets/images/cherryblossom2.JPG");
-  font-family: 'Bree Serif', sans-serif;
+  float:right;
+  padding:0.2em 0.2em 0.2em 0.3em;
+  height:1.65em;
+  font-family: 'Avent Pro', sans-serif;
+  font-weight: 300;
   font-size: 20px;
+  position: inline-block;
+  background-color: rgba(255,255,255,1);
+  border:none;
 }
