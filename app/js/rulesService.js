@@ -48,13 +48,13 @@ japanesifyApp.service('rulesService', function() {
       'sha' : 'シェー',
       'ne'  : 'ン',
       'phoe': 'フィー',
-      'rhi': 'リ',
-      'nno': 'ノ',
-      'ck': 'ック',
-      'c': 'ク',
-      'le': 'レ',
-      'me': 'メ',
-      'ce': 'ス'
+      'rhi' : 'リ',
+      'nno' : 'ノ',
+      'ck'  : 'ック',
+      'c'   : 'ク',
+      'le'  : 'レ',
+      'me'  : 'メ',
+      'ce'  : 'ス'
     };
   };
 

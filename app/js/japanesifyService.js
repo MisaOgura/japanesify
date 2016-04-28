@@ -4,41 +4,28 @@ japanesifyApp.service('japanesifyService', ['rulesService',function(rulesService
 
   self.splitIntoSyllables = function(string, ruleJP) {
     _matchRules(string, ruleJP);
-    return matchedSyllables;
-
-
-    // return ['rhi', 'a'];
+    var output = matchedSyllables;
+    matchedSyllables = [];
+    return output;
   };
 
   function _matchRules(string, ruleJP) {
     var slicedString = string.slice(0, 4);
-    console.log("string", string);
-
     var result;
-
-    console.log('matches 3char',!!slicedString.match(ruleJP.threeCharSyllables()));
-    console.log('matches 2char',!!slicedString.match(ruleJP.twoCharSyllables()));
-
-    if (string.length === 1) {
-      console.log("one", string);
+  if (string.length === 1) {
       result = string;
       matchedSyllables.push(string);
     } else if(!!slicedString.match(ruleJP.threeCharSyllables())) {
-      console.log("SHOLD", slicedString);
-      console.log("3", string);
       result = slicedString.match(ruleJP.threeCharSyllables())[0];
       matchedSyllables.push(result);
     } else if (!!slicedString.match(ruleJP.twoCharSyllables())){
-      console.log("two", string);
       result = slicedString.match(ruleJP.twoCharSyllables())[0];
       matchedSyllables.push(result);
     } else {
       result = string[0];
       matchedSyllables.push(result);
     }
-    console.log(string);
     reducedString = string.replace(result, '');
-    console.log('endString', reducedString);
     while (reducedString.length > 0) {
       _matchRules(reducedString, ruleJP);
     }
