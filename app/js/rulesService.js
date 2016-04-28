@@ -1,7 +1,4 @@
 japanesifyApp.service('rulesService', function() {
-  this.regex = function() {
-    return /([b-df-hj-np-tv-z]{2})\b|([b-df-hj-np-tv-z][aeiou][rwy])(\b|(?![aeiouy]))|([bdf-hj-np-tv-z]+[aeo][aeiu])|([b-df-hj-np-tv-z]h[aeiou])|([ln]{2}[aeiou])|\b(ch(?![aeiou]))|([b-df-hj-np-tv-z][aeiou])|([b-df-hj-npqstv-z])|([aeiou])/i;
-  };
 
   this.matcher = function() {
     return {
@@ -58,9 +55,9 @@ japanesifyApp.service('rulesService', function() {
     };
   };
 
-  this.oneCharSyllables = function(){
-    return /^([aeiou]|[b-df-hj-npqstv-z])/i;
-  };
+  // this.oneCharSyllables = function(){
+  //   return /^([aeiou]|[b-df-hj-npqstv-z])/i;
+  // };
 
   this.twoCharSyllables = function(name){
     return /^([b-df-hj-np-tv-z][aeiou]|[b-df-hj-np-tv-z]{2}\b|\bch(?![aeiou]))/;
@@ -70,20 +67,3 @@ japanesifyApp.service('rulesService', function() {
     return /^([b-df-hj-np-tv-z]h[aeiou]|[bdf-hj-np-tv-z]+[aeo][aeiu]|[b-df-hj-np-tv-z][aeiou][rwy](\b|(?![aeiouy]))|[ln]{2}[aeiou])/i;
   };
 });
-
-// * 1 syllable
-//   - dingle vowel = ([aeiou])
-//   - single consonant  = ([b-df-hj-npqstv-z])
-//
-// * 2 syllebles
-//   - a consonant + vowel pair = ([b-df-hj-np-tv-z][aeiou])
-//   - ends with a double consonant = ([b-df-hj-np-tv-z]{2})\b
-//   - starts with CH and followed by a consonant = \b(ch(?![aeiou]))
-//
-//
-// * 3 syllables
-//   - dounle N or L followed by a vowel = ([ln]{2}[aeiou])
-//   - a consonant followed by h followed by a vowel = ([b-df-hj-np-tv-z]h[aeiou])
-//   - a consonant followed by a vowel followed by either r/w/y,
-//       if at the end of the name or followed by a consonant = ([b-df-hj-np-tv-z][aeiou][rwy])(\b|(?![aeiouy]))
-//   - a consonant followed by a specified double vowel = ([bdf-hj-np-tv-z]+[aeo][aeiu])

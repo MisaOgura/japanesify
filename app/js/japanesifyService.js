@@ -11,15 +11,19 @@ japanesifyApp.service('japanesifyService', ['rulesService',function(rulesService
 
   function _matchRules(string, ruleJP) {
     var slicedString = string.slice(0, 4);
+    var hasThree = slicedString.match(ruleJP.threeCharSyllables());
+    var hasTwo = slicedString.match(ruleJP.twoCharSyllables());
+
     var result;
-  if (string.length === 1) {
+
+    if (string.length === 1) {
       result = string;
-      matchedSyllables.push(string);
-    } else if(!!slicedString.match(ruleJP.threeCharSyllables())) {
-      result = slicedString.match(ruleJP.threeCharSyllables())[0];
       matchedSyllables.push(result);
-    } else if (!!slicedString.match(ruleJP.twoCharSyllables())){
-      result = slicedString.match(ruleJP.twoCharSyllables())[0];
+    } else if(!!hasThree) {
+      result = hasThree[0];
+      matchedSyllables.push(result);
+    } else if (!!hasTwo){
+      result = hasTwo[0];
       matchedSyllables.push(result);
     } else {
       result = string[0];
@@ -29,7 +33,6 @@ japanesifyApp.service('japanesifyService', ['rulesService',function(rulesService
     while (reducedString.length > 0) {
       _matchRules(reducedString, ruleJP);
     }
-
   }
 
   self.convertToJapanese = function(array, ruleJP) {
