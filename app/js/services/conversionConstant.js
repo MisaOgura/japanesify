@@ -13,6 +13,7 @@ japanesifyApp.constant('CONVERSION_CONSTANT', {
   's'   : 'ス',
   't'   : 'ト',
   'y'   : 'イ',
+  'da'  : 'ダ',
   'ri'  : 'リ',
   'ka'  : 'カ',
   'mi'  : 'ミ',
@@ -40,7 +41,7 @@ japanesifyApp.constant('CONVERSION_CONSTANT', {
   'li'  : 'リ',
   'ne'  : 'ン',
   'le'  : 'レ',
-  'ma'  : 'メイ',
+  'ma'  : 'マ',
   'me'  : 'メ',
   'ce'  : 'ス',
   'ga'  : 'ガ',
@@ -50,6 +51,7 @@ japanesifyApp.constant('CONVERSION_CONSTANT', {
   'yu'  : 'ユ',
   'ch'  : 'ク',
   'ck'  : 'ック',
+  'ry'  : 'リー',
   'nna' : 'ナ',
   'nne' : 'ン',
   'nno' : 'ノ',
@@ -66,5 +68,5 @@ japanesifyApp.constant('CONVERSION_CONSTANT', {
   'cey' : 'シー',
   'phoe': 'フィー',
   'shee': 'シー',
-  }
+}
 );
