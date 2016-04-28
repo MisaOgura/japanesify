@@ -5,6 +5,7 @@
     <title>Japanesify</title>
     <link rel="stylesheet" href="assets/css/reset.css" type="text/css">
     <link rel="stylesheet" href="assets/css/stylesheet.css" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Bree Serif&subset=latin" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Aladin&subset=latin" rel="stylesheet" type="text/css">
     <script src="bower_components/angular/angular.js"></script>
     <script src="js/app.js"></script>
@@ -21,12 +22,13 @@
     <main ng-controller="japanesifyController as ctrl">
       <section>
         <form>
+          <h2 >Please enter your name below</h2>
           <input type="text" id="input" ng-model="name" placeholder="e.g. Misa">
           <button id="submit" ng-click="ctrl.newTranslation(name)">Submit</button>
         </form>
       </section>
       <section>
-        <h2>Your name translates to:</h2>
+        <h2 ng-show="ctrl.translationObj.japanese">Your name translates to:</h2>
         <b class="translation">{{ctrl.translationObj.japanese}}</b>
       </section>
     </main>

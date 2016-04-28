@@ -1,3 +1,9 @@
+body {
+  text-align: center;
+  background-color: #FFF3F3;
+}
+
+
 header {
   background-image: url("/assets/images/cherryblossom2.JPG");
   background-size: 100%;
@@ -9,9 +15,32 @@ header {
 }
 
 h1 {
-  text-align: center;
   font-size:100px;
   text-shadow: 4px 2px #D0A2A2;
   color: white;
   font-family: 'Aladin', sans-serif;
+}
+
+main {
+  color: #702F2F;
+  font-family: 'Bree Serif', sans-serif;
+}
+
+h2 {
+  font-size: 35px;
+}
+
+b {
+  font-size: 100px;
+}
+
+input {
+  font-family: 'Bree Serif', sans-serif;
+  font-size: 20px;
+}
+
+button {
+  background-image: url("/assets/images/cherryblossom2.JPG");
+  font-family: 'Bree Serif', sans-serif;
+  font-size: 20px;
 }
