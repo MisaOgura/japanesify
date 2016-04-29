@@ -107,8 +107,8 @@ describe('japanesifyService', function (){
                {string:"paul",     array:["pau", "l"]},
                {string:"gabrielle",array:["ga","b", "ri", "e", "lle"]},
                {string:"patrizio", array:["pa","t", "ri", "zi", "o"]},
-              //  {string:"phoebe",   array:["phoe","be"]},
-              //  {string:"harsheet", array:["har", "shee", "t"]}
+               {string:"phoebe",   array:["phoe","be"]},
+               {string:"harsheet", array:["har", "shee", "t"]}
              ];
 
   beforeEach(inject(function(_japanesifyService_, _rulesService_){

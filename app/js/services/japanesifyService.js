@@ -11,19 +11,23 @@ japanesifyApp.service('japanesifyService', ['rulesService',function(rulesService
 
   function _matchRules(string, ruleJP) {
     var slicedString = string.slice(0, 4);
-    var hasThree = slicedString.match(ruleJP.threeCharSyllables());
-    var hasTwo = slicedString.match(ruleJP.twoCharSyllables());
+    var matchFourSyllableRule = slicedString.match(ruleJP.fourCharSyllables());
+    var matchThreeSyllableRule = slicedString.match(ruleJP.threeCharSyllables());
+    var matchTwoSyllableRule = slicedString.match(ruleJP.twoCharSyllables());
 
     var result;
 
     if (string.length === 1) {
       result = string;
       matchedSyllables.push(result);
-    } else if(!!hasThree) {
-      result = hasThree[0];
+    } else if(!!matchFourSyllableRule) {
+      result = matchFourSyllableRule[0];
       matchedSyllables.push(result);
-    } else if (!!hasTwo){
-      result = hasTwo[0];
+    } else if(!!matchThreeSyllableRule) {
+      result = matchThreeSyllableRule[0];
+      matchedSyllables.push(result);
+    } else if (!!matchTwoSyllableRule){
+      result = matchTwoSyllableRule[0];
       matchedSyllables.push(result);
     } else {
       result = string[0];
