@@ -23,19 +23,31 @@
     <main>
       <h1>Japanesify</h1>
 
-      <section class="box" ng-controller="japanesifyController as ctrl">
+      <section class="wrapper" ng-controller="japanesifyController as ctrl">
+
         <section>
-          <h2 >Please enter your name below:</h2>
+          <h2>Please enter your name below</h2>
           <form>
-            <input id='input' type="text" ng-model="name" placeholder="e.g. Misa">
+            <input id="input" type="text" ng-model="name" placeholder="e.g. Misa">
             <button id="submit" ng-click="ctrl.newTranslation(name)">Submit</button>
           </form>
         </section>
-        <section class="translationSection">
-          <hr>
-          <h3 ng-show="ctrl.translationObj.japanese">Your name translates to:</h2>
+
+        <section class="translation">
+          <h3 ng-show="ctrl.translationObj.japanese">Your name translates to</h2>
           <section class="translation">{{ctrl.translationObj.japanese}}</section>
         </section>
+
+        <section class="translation">
+          <h3 ng-show="ctrl.translationObj.japanese">Previous searches</h3>
+          <ul>
+            <li ng-repeat="translation in ctrl.allTranslations">
+              {{ translation.romanji }}: <span id="translation-{{$index}}">{{ translation.japanese }}</span>
+              <a href="#" ng-click="ctrl.printId($index);"><img src="https://cdn2.iconfinder.com/data/icons/designers-and-developers-icon-set/32/print-128.png" alt="Print your name!" class="print" /></a>
+            </li>
+          </ul>
+        </section>
+
       </section>
     </main>
   </body>
