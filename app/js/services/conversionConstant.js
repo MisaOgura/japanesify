@@ -23,7 +23,7 @@ japanesifyApp.constant('CONVERSION_CONSTANT', {
   're'  : 'レ',
   'zo'  : 'ツォ',
   'to'  : 'ト',
-  'be'  : 'ベ',
+  'be'  : 'ビ',
   'ke'  : 'ケ',
   'vi'  : 'ヴィ',
   'ca'  : 'カ',

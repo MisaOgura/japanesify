@@ -4,14 +4,6 @@ japanesifyApp.service('rulesService', ['CONVERSION_CONSTANT', function(CONVERSIO
     return CONVERSION_CONSTANT;
   };
 
-  var vowelList = /[aeiou]/;
-  var consList = /[b-df-hj-np-tv-z]/;
-  var specialConsList = /[bdf-hj-np-tv-z]/;
-
-  // function isCons
-
-
-
   var consVowel = '[b-df-hj-np-tv-z][aeiou]';
   var doubleCons = '[b-df-hj-np-tv-z]{2}\\b';
   var startsCHCons = '\\bch(?![aeiou])';
