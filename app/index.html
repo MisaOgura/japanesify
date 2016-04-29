@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css?family=Aladin" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Advent+Pro:400,100,300" rel="stylesheet" type="text/css">
     <link href="https://s3-us-west-2.amazonaws.com/japanfonts/Ming+Imperial.TTF" rel="stylesheet" type="text/css">
-    <link href="https://s3-us-west-2.amazonaws.com/japanfonts/Brushido.ttf" rel="stylesheet" type="text/css">
 
     <script src="bower_components/angular/angular.js"></script>
     <script src="js/app.js"></script>
@@ -34,8 +33,10 @@
 
         <section class="translation" ng-show="ctrl.translationObj.japanese">
           <h3>Your name translates to</h2>
-          <section class="translation">
-            {{ctrl.translationObj.japanese}}
+          <section>
+            <section class="ming ming-lg">
+              {{ctrl.translationObj.japanese}}
+            </section>
             <a href="#" ng-click="ctrl.printId($index);"><img src="https://cdn2.iconfinder.com/data/icons/designers-and-developers-icon-set/32/print-128.png" alt="Print your name!" class="print" /></a>
             <a target="_blank" href="http://twitter.com/home?status=This is my name in Japanese: {{ctrl.translationObj.japanese}}" /><img src="assets/images/twitter-icon.png" alt="" /></a>
             <a target="_blank" href="https://translate.google.com/#auto/ja/{{ctrl.translationObj.japanese}}"><img src="assets/images/speaker-icon.png" alt="" /></a>
@@ -46,7 +47,7 @@
           <h3 ng-show="ctrl.translationObj.japanese">Previous searches</h3>
           <ul>
             <li ng-repeat="translation in ctrl.allTranslations">
-              {{ translation.romanji }}: <span id="translation-{{$index}}">{{ translation.japanese }}</span>
+              {{ translation.romanji }}: <span id="translation-{{$index}}" class="ming ming-sm">{{ translation.japanese }}</span>
             </li>
           </ul>
         </section>
