@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" ng-app="japanesifyApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Japanesify - find out your name in Japanese</title>
+    <link rel="stylesheet" href="assets/css/reset.css" type="text/css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/japanesifyController.js"></script>
+    <script src="js/translationFactory.js"></script>
+    <script src="js/japanesifyService.js"></script>
+    <script src="js/rulesService.js"></script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    </script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    </script>
+  </head>
+
+  <body>
+      <div ng-controller="japanesifyController as ctrl">
+        <input id="input" ng-model="name">
+        <button id="submit" ng-click="ctrl.newTranslation(name)">Submit</button>
+          <h1 class="translation">{{ctrl.translationObj.japanese}}</h1>
+          <a target="_blank" href="http://twitter.com/home?status=Your name in Japanese {{ctrl.translationObj.japanese}}" >Tweet this</a>
+      </div>
+
+  </body>
+</html>
+
+<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=450&layout=standard&action=like&show_faces=true&share=true&height=80&appId" width="450" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
