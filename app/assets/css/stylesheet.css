@@ -2,85 +2,108 @@ body {
   background-image: url("/assets/images/cherryblossom.JPG");
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: #FFF3F3;
+  background-color: rgb(255,243,243);
 }
 
-
-h1 {
-  text-align: center;
-  margin:auto;
-  padding:1.5em 0em 0.6em 0em;
-  font-size:110px;
-  text-shadow: 4px 2px #D0A2A2;
-  color: white;
-  font-family: 'Aladin', sans-serif;
-  
-
-}
-
-.box {
+.wrapper {
   margin:auto;
   padding:0.5em;
   background-color: rgba(255,255,255,0.8);
-  border-radius: 50; 
+  border-radius: 8px;
   max-width: 31em;
-  color: #702F2F;
+  color: rgb(112,47,47);
   font-family: 'Avent Pro', sans-serif;
   font-weight: 300;
-}
-
-form{
-  max-width:30em;
-  padding-top: 1em;
-}
-
-section.translationSection {
-margin-top:1em;
-}
-
-h2 {
-  text-align: left;
-  font-size: 35px;
-}
-
-h3 {
-  text-align: left;
-  font-size: 25px;
 }
 
 .translation {
-  padding-top: 20px;
-  font-size: 80px;
-  color: black;
-  text-align: center;
-  font-family: 'Ming Imperial';
+  margin-top:1em;
 }
 
- {
-  padding-top: 1em;
-  font-size: 70px;
+.ming {
+  font-family: "Ming Imperial", serif;
+  color: rgb(0, 0, 0);
+  font-size: 40px;
+}
+
+.ming-lg {
+  padding-top: 20px;
+  font-size: 80px;
+  text-align: center;
+}
+
+.ming-sm {
+  font-size: 20px;
+}
+
+ul li {
+  font-size: 18px;
+}
+
+/* HEADINGS */
+h1 {
+  text-align: center;
+  margin: auto;
+  padding:1.5em 0 0.6em 0;
+  font-size: 110px;
+  text-shadow: 4px 2px #D0A2A2;
+  color: rgb(255,255,255);
+  font-family: 'Aladin', sans-serif;
+}
+
+h2 {
+  font-size: 35px;
+  margin-bottom: 0.3em;
+
+}
+
+h3 {
+  font-size: 25px;
+  padding: 5px 0px;
+}
+
+/* FORM */
+
+form {
+  max-width: 30em;
+  /*padding-top: 1em;*/
 }
 
 input {
-  width: 340px;
-  height:1.2em;
+  width: 360px;
+  height: 30px;
   font-size: 20px;
-  padding:0.2em 0em 0.2em 0.3em;
+  padding: 5px;
   font-family: 'Avent Pro', sans-serif;
   font-weight: 300;
-  border:0;
+  border: 0;
   position: inline-block;
-
+  background-color: rgb(255,255,255);
 }
 
 button {
-  float:right;
-  padding:0.2em 0.2em 0.2em 0.3em;
-  height:1.65em;
+  float: right;
+  padding: 5px;
+  height: 40px;
+  width: 70px;
   font-family: 'Avent Pro', sans-serif;
   font-weight: 300;
   font-size: 20px;
   position: inline-block;
-  background-color: rgba(255,255,255,1);
-  border:none;
+  background-color: rgb(255,255,255);
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+/* IMAGES */
+img {
+  width: 16px;
+  height: 16px;
+}
+
+.print {
+  margin-left: 15px;
 }
