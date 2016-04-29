@@ -6,7 +6,6 @@ describe('japanesifyService', function (){
   beforeEach(inject(function(_japanesifyService_, _rulesService_){
     japanesifyService = _japanesifyService_;
     rulesService = _rulesService_;
-    spyOn(rulesService, 'threeCharSyllables').and.returnValue(/^([b-df-hj-np-tv-z]h[aeiou]|[bdf-hj-np-tv-z]+[aeo][aeiu]|[b-df-hj-np-tv-z][aeiou][rwy](\b|(?![aeiouy]))|[ln]{2}[aeiou])/i);
   }));
 
   describe('#splitIntoSyllables', function (){
@@ -19,25 +18,17 @@ describe('japanesifyService', function (){
 
   describe('#convertToJapanese', function(){
     it ('convert an array of syllables to a japanese string', function() {
-      expect(japanesifyService.convertToJapanese(["ca","s","par"], ruleJP)).toEqual('カスパー');
       names.forEach(function(name){
         expect(japanesifyService.convertToJapanese(name.array, rulesService)).toEqual(name.japanese);
       });
     });
   });
 
-  describe('#translateWord', function(){
-    it ('returns translated string', function() {
-      expect(japanesifyService.translateWord("caspar", ruleJP)).toEqual('カスパー');
-    });
-  });
-
   describe('#translateWord', function() {
-    it ('returns a correct array for four letters', function() {
-      expect(japanesifyService.translateWord('rhia', rulesService)).toEqual('リア');
-    });
-    it ('returns a correct array for rhiannon', function() {
-      expect(japanesifyService.translateWord('rhiannon', rulesService)).toEqual('リアノン');
+    it ('returns a correctly converted Japanese names', function() {
+      names.forEach(function(name){
+        expect(japanesifyService.translateWord(name.string, rulesService)).toEqual(name.japanese);
+      });
     });
   });
 
@@ -65,7 +56,7 @@ var matcherFunc = function() {
           're'  : 'レ',
           'zo'  : 'ツォ',
           'to'  : 'ト',
-          'be'  : 'ビ',
+          'be'  : 'ベ',
           'ke'  : 'ケ',
           'vi'  : 'ヴィ',
           'ca'  : 'カ',
@@ -126,7 +117,7 @@ var names = [{string:"caspar",   array:["ca","s","par"],          　　japanese
              {string:"sachin",   array:["sa","chi", "n"],         　　japanese: 'サチン'},
              {string:"rhiannon", array:["rhi","a", "nno", "n"],   　　japanese: 'リアノン'},
              {string:"junyuan",  array:["ju", "n", "yu", "a", "n"],  japanese: 'ジュンユアン'},
-             {string:"tobenna",  array:["to","be","nna"],            japanese: 'トビナ'},
+             {string:"tobenna",  array:["to","be","nna"],            japanese: 'トベナ'},
              {string:"anne",     array:["a","nne"],                  japanese: 'アン'},
              {string:"jasmina",  array:["ja","s","mi", "na"],        japanese: 'ジャスミナ'},
              {string:"oliver",   array:["o","li","ver"],             japanese: 'オリバー'},
@@ -143,7 +134,7 @@ var names = [{string:"caspar",   array:["ca","s","par"],          　　japanese
              {string:"paul",     array:["pau", "l"],                 japanese: 'ポール'},
              {string:"gabrielle",array:["ga","b", "ri", "e", "lle"], japanese: 'ガブリエル'},
              {string:"patrizio", array:["pa","t", "ri", "zi", "o"],  japanese: 'パトリツィオ'},
-             {string:"phoebe",   array:["phoe","be"],                japanese: 'フィービ'},
+             {string:"phoebe",   array:["phoe","be"],                japanese: 'フィーベ'},
              {string:"harsheet", array:["har", "shee", "t"],         japanese: 'ハーシート'}
            ];
 });
