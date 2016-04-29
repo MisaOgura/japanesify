@@ -24,7 +24,6 @@
       <h1>Japanesify</h1>
 
       <section class="wrapper" ng-controller="japanesifyController as ctrl">
-
         <section>
           <h2>Please enter your name below</h2>
           <form>
@@ -33,9 +32,14 @@
           </form>
         </section>
 
-        <section class="translation">
-          <h3 ng-show="ctrl.translationObj.japanese">Your name translates to</h2>
-          <section class="translation">{{ctrl.translationObj.japanese}}</section>
+        <section class="translation" ng-show="ctrl.translationObj.japanese">
+          <h3>Your name translates to</h2>
+          <section class="translation">
+            {{ctrl.translationObj.japanese}}
+            <a href="#" ng-click="ctrl.printId($index);"><img src="https://cdn2.iconfinder.com/data/icons/designers-and-developers-icon-set/32/print-128.png" alt="Print your name!" class="print" /></a>
+            <a target="_blank" href="http://twitter.com/home?status=This is my name in Japanese: {{ctrl.translationObj.japanese}}" /><img src="assets/images/twitter-icon.png" alt="" /></a>
+            <a target="_blank" href="https://translate.google.com/#auto/ja/{{ctrl.translationObj.japanese}}"><img src="assets/images/speaker-icon.png" alt="" /></a>
+          </section>
         </section>
 
         <section class="translation">
@@ -43,7 +47,6 @@
           <ul>
             <li ng-repeat="translation in ctrl.allTranslations">
               {{ translation.romanji }}: <span id="translation-{{$index}}">{{ translation.japanese }}</span>
-              <a href="#" ng-click="ctrl.printId($index);"><img src="https://cdn2.iconfinder.com/data/icons/designers-and-developers-icon-set/32/print-128.png" alt="Print your name!" class="print" /></a>
             </li>
           </ul>
         </section>

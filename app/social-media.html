@@ -10,10 +10,6 @@
     <script src="js/translationFactory.js"></script>
     <script src="js/japanesifyService.js"></script>
     <script src="js/rulesService.js"></script>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-    </script>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-    </script>
   </head>
 
   <body>
@@ -21,11 +17,9 @@
         <input id="input" ng-model="name">
         <button id="submit" ng-click="ctrl.newTranslation(name)">Submit</button>
           <h1 class="translation">{{ctrl.translationObj.japanese}}</h1>
-          <a target="_blank" href="http://twitter.com/home?status=Your name in Japanese {{ctrl.translationObj.japanese}}" >Tweet this</a>
+          <a target="_blank" href="http://twitter.com/home?status=This is my name in Japanese: {{ctrl.translationObj.japanese}}">
+            <img src="assets/images/twitter-icon.png" alt="" />
+          </a>
       </div>
-
   </body>
 </html>
-
-<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=450&layout=standard&action=like&show_faces=true&share=true&height=80&appId" width="450" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>

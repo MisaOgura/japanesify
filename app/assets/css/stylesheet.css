@@ -74,9 +74,11 @@ button {
 }
 
 /* IMAGES */
-
-.print {
+img {
   width: 12px;
   height: 12px;
+}
+
+.print {
   margin-left: 15px;
 }
