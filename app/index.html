@@ -21,11 +21,11 @@
 
   <body>
     <main>
-      <h1>Japanesify</h1>
+      <p id='h1'>Japanesify</p>
 
       <section class="wrapper" ng-controller="japanesifyController as ctrl">
         <section>
-          <h2>Please enter your name below</h2>
+          <p id='h2'>Please enter your name below</p>
           <form>
             <input id="input" type="text" ng-model="name" placeholder="e.g. Misa">
             <button id="submit" ng-click="ctrl.newTranslation(name)">Submit</button>
@@ -33,14 +33,14 @@
         </section>
 
         <section class="translation" ng-show="ctrl.translationObj.japanese">
-          <h3>Your name translates to</h2>
+          <p id='h3'>Your name translates to</p>
           <section>
             <section class="ming ming-lg">
               {{ctrl.translationObj.japanese}}
             </section>
-            <a href="#" ng-click="ctrl.printId($index);"><img src="https://cdn2.iconfinder.com/data/icons/designers-and-developers-icon-set/32/print-128.png" alt="Print your name!" class="print" /></a>
-            <a target="_blank" href="http://twitter.com/home?status=This is my name in Japanese: {{ctrl.translationObj.japanese}}" /><img src="assets/images/twitter-icon.png" alt="" /></a>
-            <a target="_blank" href="https://translate.google.com/#auto/ja/{{ctrl.translationObj.japanese}}"><img src="assets/images/speaker-icon.png" alt="" /></a>
+            <a target="_blank" href="http://twitter.com/home?status=This is my name in Japanese: {{ctrl.translationObj.japanese}}" /><img src="/assets/images/twitter-icon.png" alt=""  class="twitter"/></a>
+            <a target="_blank" href="https://translate.google.com/#auto/ja/{{ctrl.translationObj.japanese}}"><img src="/assets/images/speaker-icon.png" alt=""/></a>
+            <a href="#" ng-click="ctrl.printId($index);"><img src="/assets/images/printer-icon.png" alt="Print your name!" class="print" /></a>
           </section>
         </section>
 

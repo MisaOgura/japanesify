@@ -23,7 +23,7 @@ body {
 .ming {
   font-family: "Ming Imperial", serif;
   color: rgb(0, 0, 0);
-  font-size: 40px;
+  font-size: 35px;
 }
 
 .ming-lg {
@@ -40,33 +40,29 @@ ul li {
   font-size: 18px;
 }
 
-/* HEADINGS */
-h1 {
+#h1 {
   text-align: center;
   margin: auto;
-  padding:1.5em 0 0.6em 0;
+  padding:0.5em 0 0.5em 0;
   font-size: 110px;
   text-shadow: 4px 2px #D0A2A2;
   color: rgb(255,255,255);
   font-family: 'Aladin', sans-serif;
 }
 
-h2 {
-  font-size: 35px;
+#h2 {
+  font-size: 25px;
   margin-bottom: 0.3em;
 
 }
 
-h3 {
+#h3 {
   font-size: 25px;
   padding: 5px 0px;
 }
 
-/* FORM */
-
 form {
   max-width: 30em;
-  /*padding-top: 1em;*/
 }
 
 input {
@@ -98,12 +94,19 @@ button:hover {
   cursor: pointer;
 }
 
-/* IMAGES */
 img {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
+  padding: 0px 2px 0px 2px;
+}
+
+.twitter{
+  width: 17px;
+  height: 17px;
 }
 
 .print {
-  margin-left: 15px;
+  padding: 0px 0px 0px 0px;
+  width: 20px;
+  height: 20px;
 }
