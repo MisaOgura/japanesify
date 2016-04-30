@@ -47,12 +47,6 @@ japanesifyApp.service('japanesifyService', ['rulesService',function(rulesService
     return newArray.join('');
   };
 
-  function filterEmptyString(element) {
-    if ((element !== '') | (element !== undefined)); {
-      return element;
-    }
-  }
-
   self.translateWord =  function(string) {
     var syllableArray = self.splitIntoSyllables(string, rulesService);
     return self.convertToJapanese(syllableArray, rulesService);

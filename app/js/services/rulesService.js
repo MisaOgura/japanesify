@@ -13,20 +13,20 @@ japanesifyApp.service('rulesService', ['CONVERSION_CONSTANT', function(CONVERSIO
   var doubleLNVowel = '^[ln]{2}[aeiou]';
   var doubleConsDoubleVowel = '^[bdf-hj-np-tv-z]{2}[aeo][aeiu]';
 
-  this.twoCharSyllables = function(name){
+  this.twoCharSyllables = function(){
     return new RegExp(consVowel+'|'+
                       doubleCons+'|'+
                       startsCHCons, 'i');
   };
 
-  this.threeCharSyllables = function(name){
+  this.threeCharSyllables = function(){
     return new RegExp(consHVowel+'|'+
                       consDoubleVowel+'|'+
                       consVowelRWY+'|'+
                       doubleLNVowel, 'i');
   };
 
-  this.fourCharSyllables = function(name) {
+  this.fourCharSyllables = function() {
     return new RegExp(doubleConsDoubleVowel, 'i');
   };
 }]);
