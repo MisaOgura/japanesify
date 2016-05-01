@@ -6,7 +6,7 @@ Have you ever wandered how your name is spelled in Japanese? Then **Japanesify**
 *( Following information is correct as of 1st May 2016 )*
 
 ### 1. Introduction
-Japanesify was created as a part of Makerthon, a group project week at the Makers Academy ( For those who aren't familiar with the name, Makers Academy is a London-based 12-week programming bootcamp ). How it looked like at our presentation at the end of the week can be found on *group-project-endpoint* branch. The version presented here on master branch includes I have personally implemented based on where we left off.
+Japanesify was created as a part of Makerthon, a group project week at the Makers Academy ( For those who aren't familiar with the name, Makers Academy is a London-based 12-week programming bootcamp ). How it looked like at the end of the week can be found on *group-project-endpoint* branch. The version presented here on master branch shows what I have been personally implementing on top of where we left off.
 
 The idea for this project came into my mind when people on the course asked me to spell their names out in Japanese. I knew there are quite a lot of interests in Asian letters in general here in the UK, exemplified by the popularity of clothing brand Superdry (their Japanese is often *beyond hilarious*, by the way). The level of interests is evident even just by the number of Japanese tattoos I find on streets. So I thought it would be useful to have a website that does the conversion for you.
 
