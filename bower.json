@@ -10,7 +10,6 @@
     "start": "node server.js"
   },
   "license": "ISC",
-  "homepage": "",
   "ignore": [
     "**/.*",
     "node_modules",
