@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/reset.css" type="text/css">
     <link rel="stylesheet" href="css/stylesheet.css" type="text/css">
 
+    <link href="https://fonts.googleapis.com/css?family=Voltaire&subset=latin" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Aladin" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Advent+Pro:400,100,300" rel="stylesheet" type="text/css">
     <link href="https://s3-us-west-2.amazonaws.com/japanfonts/Ming+Imperial.TTF" rel="stylesheet" type="text/css">
@@ -49,7 +50,7 @@
           <p id='h4' ng-show="ctrl.translationObj.japanese">Previous searches</p>
           <ul>
             <li ng-repeat="translation in ctrl.allTranslations">
-              {{ translation.romanji }}: <span id="translation-{{$index}}" class="ming ming-sm">{{ translation.japanese }}</span>
+              {{ translation.romanji.charAt(0).toUpperCase() + translation.romanji.slice(1) }}: <span id="translation-{{$index}}" class="ming ming-sm">{{ translation.japanese }}</span>
             </li>
           </ul>
         </section>
