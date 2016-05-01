@@ -41,7 +41,7 @@ Visit <a href="https://japanesify.herokuapp.com/">Japanesify on Heroku</a>
 7. Run `$ bower install`
 8. Sanity check (unit tests) `$ karma start test/karma.conf.js`
 9. Sanity check (e2e tests) `$ protractor test/protractor.conf.js`
-10. RUn `$ npm start`
+10. Run `$ npm start`
 11. Open up a browser and type `localhost:8080` in the URL bar
 12. TADA! Enjoy converting your name :)
 
