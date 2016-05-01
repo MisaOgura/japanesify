@@ -1,8 +1,6 @@
 body {
-  background-image: url("/images/cherryblossom.JPG");
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: rgb(255,243,243);
 }
 
 .wrapper {
@@ -47,7 +45,7 @@ ul li {
 
 #h1 {
   text-align: center;
-  margin: auto;
+  margin-top: -2em;
   padding:0.5em 0 0.5em 0;
   font-size: 100px;
   text-shadow: 4px 2px #D0A2A2;
@@ -109,6 +107,12 @@ img {
   width: 18px;
   height: 18px;
   padding: 0px 2px 0px 2px;
+}
+
+.cherryblossom {
+  padding-left: 20em;
+  width: 152px;
+  height: 176px;
 }
 
 .github {
