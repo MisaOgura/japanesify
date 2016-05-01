@@ -1,6 +1,3 @@
 node_modules
 app/bower_components
-app/assets/BreakName.js
-app/assets/regexJS.js
-app/assets/regexJS2.js
 app/config.log
