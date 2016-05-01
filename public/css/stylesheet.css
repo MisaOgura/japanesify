@@ -77,7 +77,7 @@ form {
 input {
   width: 360px;
   height: 30px;
-  font-size: 20px;
+  font-size: 18px;
   padding: 5px;
   font-family: 'Avent Pro', sans-serif;
   font-weight: 300;
@@ -92,9 +92,9 @@ button {
   height: 40px;
   width: 70px;
   text-align: center;
-  font-family: 'Avent Pro', sans-serif;
+  font-family: 'Voltaire', sans-serif;
   font-weight: 300;
-  font-size: 17px;
+  font-size: 19px;
   position: inline-block;
   background-color: rgb(255,255,255);
   border: none;
