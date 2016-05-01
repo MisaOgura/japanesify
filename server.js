@@ -2,13 +2,10 @@ var gzippo = require('gzippo');
 var express = require('express');
 var app = express();
 var path = require('path');
-var routes = require("/app/route.js")(app);
+var routes = require("./app/routes.js")(app);
 var port = process.env.PORT || 8080;
 
-app.use(express.logger('dev'));
-
-app.use(express.static(path.join(__dirname, 'app/assets')));
-app.use(express.static(path.join(__dirname, 'app/js')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.listen(port);
 
 console.log('Listening on port ' + port);
