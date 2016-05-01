@@ -1,16 +1,19 @@
 body {
+  background-image: url("/images/background.png");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: 0px 70px;
+  background-attachment: fixed;
 }
 
 .wrapper {
   margin:auto;
   padding:.6em .5em .3em 1.5em;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(211,211,211,0.70);
   border-radius: 8px;
   max-width: 31em;
-  color: rgb(112,47,47);
-  font-family: 'Avent Pro', sans-serif;
+  color: rgb(150,47,47);
+  font-family: 'Voltaire', sans-serif;
   font-weight: 300;
 }
 
@@ -26,12 +29,12 @@ body {
 .ming {
   font-family: "Ming Imperial", serif;
   color: rgb(0, 0, 0);
-  font-size: 35px;
+  font-size: 20px;
 }
 
 .ming-lg {
-  padding: .3em 0em .1em 0em;
-  font-size: 70px;
+  padding: .4em 0em .2em 0em;
+  font-size: 60px;
   text-align: center;
 }
 
@@ -45,12 +48,10 @@ ul li {
 
 #h1 {
   text-align: center;
-  margin-top: -2em;
-  padding:0.5em 0 0.5em 0;
-  font-size: 100px;
-  text-shadow: 4px 2px #D0A2A2;
-  color: rgb(255,255,255);
-  font-family: 'Aladin', sans-serif;
+  padding:0.5em 0 0.4em 0;
+  font-size: 85px;
+  color: rgba(200,3,3,1);
+  font-family: 'Voltaire', sans-serif;
 }
 
 #h2 {
