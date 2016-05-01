@@ -15,7 +15,7 @@ I was fortunate to have an amazing group to realise this idea. Huge thanks and c
 So here it comes! The current version of Japanesify supports **40+ names** as an input and **Katakana** as an output. I am hoping to keep working on the conversion algorithm to support more names.
 
 ### 2. Development
-Japanesify is a single-page application built with **AngularJS** ( ver 1.5.5 ). We use **Karma** ( ver 0.13.22 ) for unit testing and **Protractor** ( ver 3.3.5 ) for end-to-end testing.
+Japanesify is a single-page application written in **Javascript** and built on **AngularJS** ( ver 1.5.5 ). We use **Karma** ( ver 0.13.22 ) for unit testing and **Protractor** ( ver 3.3.5 ) for end-to-end testing.
 
 The conversion of alphabetical names into Katakana happens in two steps. The first and the most difficult step is to break names to correct syllables, for which we created **our very own algorithm**. As long as we get the first part right, the second part is easy! We go through the list of syllables, mapping each to a corresponding Katakana and stitch them all together.
 
@@ -25,7 +25,13 @@ Another feature I want to implement is to suggest a Katakana version of similar 
 
 Following on this line, I'm also going to add a "Report a problem" type of feature. If an alternative suggestion still fails to provide them with a satisfactory result, users can communicate with me, be it by sending an email or filling a form, so that I can improve the algorithm even better!
 
-### 3. Install & How to use
+### 3. How to use
+Japanesify is available both online and offline. Installation instructions are below.
+
+#### Online version
+Visit <a href="https://japanesify.herokuapp.com/">Japanesify on Heroku</a>
+
+#### Local installation
 1. Fire up the terminal
 2. Make sure you have installed latest version of Node.js and npm
 3. Move to a directory where you want to create a clone of the app
@@ -35,10 +41,9 @@ Following on this line, I'm also going to add a "Report a problem" type of featu
 7. Run `$ bower install`
 8. Sanity check (unit tests) `$ karma start test/karma.conf.js`
 9. Sanity check (e2e tests) `$ protractor test/protractor.conf.js`
-8. Move into app directory with `$ cd app`
-9. Fire up the server `$ http-server`
-10. Open up a browser and type `localhost:8080` in the URL bar
-11. TADA! Enjoy converting your name :)
+10. RUn `$ npm start`
+11. Open up a browser and type `localhost:8080` in the URL bar
+12. TADA! Enjoy converting your name :)
 
 
 ### 4. Team ( hyperlink to Github profile )

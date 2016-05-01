@@ -1,14 +1,19 @@
 {
-  "name": "furtherjs",
+  "name": "Japanesify",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "Makers Academy Makerthon Project",
+  "main": "public/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "http-server"
+    "start": "node server.js"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MisaOgura/japanesify.git"
+  },
+  "author": "Misa Ogura",
   "license": "ISC",
+  "homepage": "https://github.com/MisaOgura/japanesify.git",
   "devDependencies": {
     "bower": "^1.7.9",
     "jasmine-core": "^2.4.1",
@@ -22,6 +27,7 @@
   "dependencies": {
     "express": "^4.13.4",
     "gzippo": "^0.2.0",
-    "http-server": "^0.9.0"
+    "http-server": "^0.9.0",
+    "logger": "0.0.1"
   }
 }

@@ -1,7 +1,7 @@
 {
-  "name": "furtherjs",
+  "name": "japanesify",
   "description": "",
-  "main": "app.js",
+  "main": "public/app.js",
   "authors": [
     "Misa Ogura <misa.ogura01@gmail.com>",
     "Caspar Fischer-Zernin <casparfz@gmail.com>"
@@ -10,7 +10,6 @@
     "start": "node server.js"
   },
   "license": "ISC",
-  "homepage": "",
   "ignore": [
     "**/.*",
     "node_modules",
