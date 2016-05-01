@@ -9,11 +9,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MisaOgura/japanesify"
+    "url": "git+https://github.com/MisaOgura/japanesify.git"
   },
   "author": "Misa Ogura",
   "license": "ISC",
-  "homepage": "https://github.com/MisaOgura/japanesify",
+  "homepage": "https://github.com/MisaOgura/japanesify.git",
   "devDependencies": {
     "bower": "^1.7.9",
     "jasmine-core": "^2.4.1",
