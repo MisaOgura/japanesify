@@ -18,6 +18,6 @@ describe ('japanesifyController', function(){
   it('stores all past translation requests', function() {
     ctrl.newTranslation('misa');
     ctrl.newTranslation('caspar');
-    expect(ctrl.allTranslations).toEqual([object, object])
+    expect(ctrl.allTranslations).toEqual([object, object]);
   });
 });
