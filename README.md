@@ -3,7 +3,7 @@
 
 Have you ever wondered how your name is spelled in Japanese? Then **Japanesify** is your solution!
 
-*( Following information is correct as of 1st May 2016 )*
+*( Following information is correct as of 5th May 2016 )*
 
 ### 1. Introduction
 #### What is Japanesify?
