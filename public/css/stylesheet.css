@@ -7,7 +7,7 @@ body {
 
 .wrapper {
   margin:auto;
-  padding:.6em .5em .3em 1.5em;
+  padding:.6em 0em .3em 2.3em;
   background-color: rgba(211,211,211,0.70);
   border-radius: 8px;
   max-width: 31em;
@@ -32,7 +32,7 @@ body {
 }
 
 .ming-lg {
-  padding: .4em 0em .2em 0em;
+  padding: .4em .5em .2em 0em;
   font-size: 60px;
   text-align: center;
 }
@@ -54,7 +54,7 @@ ul li {
 }
 
 #h2 {
-  margin-top: -0.9em;
+  margin-top: -3.2em;
   font-size: 24px;
   margin-bottom: 0.5em;
 
@@ -69,24 +69,20 @@ ul li {
   padding: 0em 0em .5em 0em;
 }
 
-form {
-  max-width: 30em;
-}
-
 input {
-  width: 360px;
+  margin-top: -0.5px;
+  width: 300px;
   height: 30px;
   font-size: 18px;
   padding: 5px;
   font-family: 'Avent Pro', sans-serif;
   font-weight: 300;
   border: 0;
-  position: inline-block;
   background-color: rgb(255,255,255);
 }
 
 button {
-  float: right;
+  margin-left: 10px;
   padding: 5px;
   height: 40px;
   width: 70px;
@@ -94,7 +90,6 @@ button {
   font-family: 'Voltaire', sans-serif;
   font-weight: 300;
   font-size: 19px;
-  position: inline-block;
   background-color: rgb(255,255,255);
   border: none;
 }
@@ -116,9 +111,16 @@ img {
 }
 
 .github {
-  padding-left: 29.5em;
-  width: 23px;
-  height: 23px;
+  padding-left: 26.8em;
+  padding-top: 0.6em;
+  width: 30px;
+  height: 30px;
+}
+
+#github {
+  color: black;
+  padding-left: 26.55em;
+  margin-top: 2em;
 }
 
 #github_link {
