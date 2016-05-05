@@ -57,7 +57,7 @@ One of the best decisions we made was to **keep the application simple**. Thanks
 #### Conversion algorithm
 The conversion of alphabetical names into Katakana happens in two steps. The first and the most difficult step is to break names to correct syllables, for which we created **our very own algorithm**. As long as we get the first part right, the second part is easy! We go through the list of syllables, mapping each to a corresponding Katakana and stitch them all together.
 
-The algorithm is still at the very early stage of its development and currently supports any syllables included in the names of our February 2016 cohort (plus coaches) at the Makers Academy. My intention is to keep expanding the list so that more people can enjoy.
+The algorithm is still at the very early stage of its development and currently supports any syllables included in the names of our February 2016 cohort (plus some coaches) at the Makers Academy. My intention is to keep expanding the list so that more people can enjoy. For the full list of currently supported syllables, please refer to `public/js/services/conversionConstant.js`.
 
 #### Future plans
 Another feature I want to implement is to suggest a Katakana version of similar name if the programme fails to recognise one or more syllables. Similar names are often written and pronounced exactly same in Japanese (e.g. Gabriel & Gabrielle, Casper & Kasper & Caspar, Mary & Marie, etc...). Since users can check how the converted name pronounced via the link to Google Translate ( sound icon ), suggesting an alternative might
