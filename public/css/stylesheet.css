@@ -54,7 +54,7 @@ ul li {
 }
 
 #h2 {
-  margin-top: -3.2em;
+  margin-top: -3em;
   font-size: 24px;
   margin-bottom: 0.5em;
 
@@ -112,15 +112,15 @@ img {
 
 .github {
   padding-left: 26.8em;
-  padding-top: 0.6em;
+  padding-top: 0.4em;
   width: 30px;
   height: 30px;
 }
 
 #github {
   color: black;
-  padding-left: 26.55em;
-  margin-top: 2em;
+  padding-left: 26.537em;
+  margin-top: 1.8em;
 }
 
 #github_link {
