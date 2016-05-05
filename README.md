@@ -43,6 +43,7 @@ Japanesify is a single-page application written in **Javascript** and built on *
 
 #### 'Code' of conduct
 Main aims we set out from the very beginning of the development were to:
+
 1. Implement Agile principles
 2. Strictly adhere to TDD
 3. Write a well-refactored clean code
