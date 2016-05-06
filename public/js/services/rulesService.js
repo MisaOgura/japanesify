@@ -8,7 +8,7 @@ japanesifyApp.service('rulesService', ['CONVERSION_CONSTANT', function(CONVERSIO
   var doubleCons = '^[b-df-hj-np-tv-z]{2}\\b';
   var startsCHCons = '^ch(?![aeiou])';
   var consHVowel = '^[b-df-hj-np-tv-z]h[aeiou]';
-  var consDoubleVowel = '^[bdf-hj-np-tv-z][aeo][aeu]';
+  var consDoubleVowel = '^[bdf-hj-np-tv-z][ae][aeu]';
   var consVowelRWY = '^[b-df-hj-np-tv-z][aeiou][rwy](\\b|(?![aeiouy]))';
   var doubleLNVowel = '^[ln]{2}[aeiou]';
   var doubleConsDoubleVowel = '^[bdf-hj-np-tv-z]{2}[aeo][aeiu]';
