@@ -54,6 +54,8 @@ var matcherFunc = function() {
           'mu'  : 'ム',
           'lo'  : 'ロ',
           're'  : 'レ',
+          'no'  : 'ノ',
+          'se'  : 'セ',
           'zo'  : 'ツォ',
           'to'  : 'ト',
           'be'  : 'ベ',
