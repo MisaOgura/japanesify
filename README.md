@@ -3,7 +3,7 @@
 
 Have you ever wondered how your name is spelled in Japanese? Then **Japanesify** is your solution!
 
-*( Following information is correct as of 5th May 2016 )*
+*( Following information is correct as of 6th May 2016 )*
 
 ### 1. Introduction
 #### What is Japanesify?
@@ -15,7 +15,7 @@ The idea for this project came into my mind when people on the course asked me t
 #### Kudos to our teamwork!
 I was fortunate to have an amazing group to realise this idea. Huge thanks and credits go to Anne, Caspar, Nick and Rhiannon, who were absolute joys to work with. We together created a cooperative, open and supportive environment, which allowed us to produce something we're so proud of! For more details on the project development, please refer to section 3.
 
-So here it comes! The current version of Japanesify supports **40+ names** as an input and **Katakana** as an output. I am hoping to keep working on the conversion algorithm to support more names.
+So here it comes! The current version of Japanesify supports **60+ names** as an input and **Katakana** as an output. I am hoping to keep working on the conversion algorithm to support more names.
 
 ### 2. How to use
 Japanesify is available both online and offline. Installation instructions are below.
@@ -50,17 +50,17 @@ Main aims we set out from the very beginning of the development were to:
 
 Basically all the ' good stuff ' I've learned at the Makers Academy.
 
-We focused on an active communication and constant feedback loop across the team. We held daily standups in the morning to catchup on what has been & what to be done. We switched pairs at least once a day to make sure everyone had a chance to work on different areas.
+We focused on an active communication and constant feedback loop across the team. We held daily stand-ups in the morning to catchup on what has been & what to be done. We switched pairs at least once a day to make sure everyone had a chance to work on different areas.
 
 One of the best decisions we made was to **keep the application simple**. Thanks to this, we managed to have a minimum viable product on day 3. This allowed us to spend the last 2 days purely for refactoring our algorithm and separating the logic further to smaller modules.
 
 #### Conversion algorithm
 The conversion of alphabetical names into Katakana happens in two steps. The first and the most difficult step is to break names to correct syllables, for which we created **our very own algorithm**. As long as we get the first part right, the second part is easy! We go through the list of syllables, mapping each to a corresponding Katakana and stitch them all together.
 
-The algorithm is still at the very early stage of its development and currently supports any syllables included in the names of our February 2016 cohort (plus some coaches) at the Makers Academy. My intention is to keep expanding the list so that more people can enjoy. For the full list of currently supported syllables, please refer to `public/js/services/conversionConstant.js`.
+The algorithm is still at the very early stage of its development and currently supports any syllables included in the names of February & April 2016 cohorts (plus some coaches) at the Makers Academy. My intention is to keep expanding the list so that more people can enjoy. For the full list of currently supported syllables, please refer to `public/js/services/conversionConstant.js`.
 
 #### Future plans
-Another feature I want to implement is to suggest a Katakana version of similar name if the programme fails to recognise one or more syllables. Similar names are often written and pronounced exactly same in Japanese (e.g. Gabriel & Gabrielle, Casper & Kasper & Caspar, Mary & Marie, etc...). Since users can check how the converted name pronounced via the link to Google Translate ( sound icon ), suggesting an alternative might
+Another feature I want to implement is to suggest a Katakana version of similar name if the programme fails to recognise one or more syllables. Similar names are often written and pronounced exactly same in Japanese (e.g. Gabriel & Gabrielle, Casper & Kasper & Caspar, Mary & Marie, etc...). So suggesting an alternative might just solve a problem, as users can click the sound icon and listen to the pronounciation at Google Translate.
 
 Following on this line, I'm also going to add a "Report a problem" type of feature. If an alternative suggestion still fails to provide them with a satisfactory result, users can communicate with me, be it by sending an email or filling a form, so that I can improve the algorithm even better!
 

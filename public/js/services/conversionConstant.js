@@ -60,6 +60,7 @@ japanesifyApp.constant('CONVERSION_CONSTANT', {
   'ne'  : 'ン',
   'le'  : 'レ',
   'ma'  : 'マ',
+  'mm'  : 'ム',
   'me'  : 'メ',
   'ce'  : 'ス',
   'ga'  : 'ガ',
