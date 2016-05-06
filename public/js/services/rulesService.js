@@ -9,6 +9,7 @@ japanesifyApp.service('rulesService', ['CONVERSION_CONSTANT', function(CONVERSIO
   var startsCHCons = '^ch(?![aeiou])';
   var consHVowel = '^[b-df-hj-np-tv-z]h[aeiou]';
   var consDoubleVowel = '^[bdf-hj-np-tv-z][ae][aeu]';
+  var consDoubleVowelSpecial = '^[bdf-hj-np-tv-z](ie)\\b';
   var consVowelRWY = '^[b-df-hj-np-tv-z][aeiou][rwy](\\b|(?![aeiouy]))';
   var doubleLNVowel = '^[ln]{2}[aeiou]';
   var doubleConsDoubleVowel = '^[bdf-hj-np-tv-z]{2}[aeo][aeiu]';
@@ -20,9 +21,10 @@ japanesifyApp.service('rulesService', ['CONVERSION_CONSTANT', function(CONVERSIO
   };
 
   this.threeCharSyllables = function(){
-    return new RegExp(consHVowel+'|'+
-                      consDoubleVowel+'|'+
-                      consVowelRWY+'|'+
+    return new RegExp(consHVowel + '|' +
+                      consDoubleVowel + '|' +
+                      consDoubleVowelSpecial + '|' +
+                      consVowelRWY + '|' +
                       doubleLNVowel, 'i');
   };
 

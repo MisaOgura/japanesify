@@ -70,6 +70,7 @@ japanesifyApp.constant('CONVERSION_CONSTANT', {
   'ch'  : 'ク',
   'ck'  : 'ック',
   'ry'  : 'リー',
+  'gie' : 'ギー',
   'way' : 'ウェイ',
   'fer' : 'ファー',
   'nna' : 'ナ',
