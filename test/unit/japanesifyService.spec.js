@@ -131,7 +131,7 @@ var names = [{string:"caspar",   array:["ca","s","par"],          　　japanese
              {string:"joj",      array:["jo","j"],                   japanese: 'ジョージ'},
              {string:"hanif",    array:["ha","ni","f"],              japanese: 'ハニフ'},
              {string:"nick",     array:["ni","ck"],                  japanese: 'ニック'},
-             {string:"mary",     array:["ma","ry"],                  japanese: 'メイリー'},
+             {string:"mary",     array:["ma","ry"],                  japanese: 'マリー'},
              {string:"claudia",  array:["c", "lau","di", "a"],       japanese: 'クローディア'},
              {string:"paul",     array:["pau", "l"],                 japanese: 'ポール'},
              {string:"gabrielle",array:["ga","b", "ri", "e", "lle"], japanese: 'ガブリエル'},

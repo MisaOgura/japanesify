@@ -59,7 +59,7 @@ japanesifyApp.constant('CONVERSION_CONSTANT', {
   'li'  : 'リ',
   'ne'  : 'ン',
   'le'  : 'レ',
-  'ma'  : 'メイ',
+  'ma'  : 'マ',
   'me'  : 'メ',
   'ce'  : 'ス',
   'ga'  : 'ガ',
