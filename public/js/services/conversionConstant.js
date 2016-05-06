@@ -27,6 +27,8 @@ japanesifyApp.constant('CONVERSION_CONSTANT', {
   'gi'  : 'ギ',
   'ph'  : 'フ',
   'ro'  : 'ロ',
+  'se'  : 'セ',
+  'no'  : 'ノ',
   'da'  : 'ダ',
   'ri'  : 'リ',
   'ka'  : 'カ',
