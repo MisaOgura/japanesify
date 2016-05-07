@@ -7,7 +7,7 @@ body {
 
 .wrapper {
   margin:auto;
-  padding:.6em 0em .3em 2.3em;
+  padding:.6em 0em .5em 2.3em;
   background-color: rgba(211,211,211,0.70);
   border-radius: 8px;
   max-width: 31em;
@@ -20,9 +20,13 @@ body {
   margin-top:1em;
 }
 
-.prev_search{
-  margin-top:.5em;
+.prev_search_box {
+  margin-top:.7em;
   margin-bottom: .3em;
+}
+
+.prev_search_list {
+  margin-bottom: .2em;
 }
 
 .ming {
@@ -32,7 +36,7 @@ body {
 }
 
 .ming-lg {
-  padding: .4em .5em .2em 0em;
+  padding: .4em .8em .1em 0em;
   font-size: 60px;
   text-align: center;
 }
@@ -65,7 +69,7 @@ ul li {
 }
 
 #h4 {
-  font-size: 18px;
+  font-size: 20px;
   padding: 0em 0em .5em 0em;
 }
 
@@ -99,9 +103,9 @@ button:hover {
 }
 
 img {
-  width: 18px;
-  height: 18px;
-  padding: 0px 2px 0px 2px;
+  width: 21px;
+  height: 21px;
+  margin: -2px 2px 0px 2px;
 }
 
 .cherryblossom {
@@ -129,12 +133,12 @@ img {
 }
 
 .twitter {
-  width: 17px;
-  height: 17px;
+  width: 20px;
+  height: 20px;
 }
 
 .print {
-  padding: 0px 0px 0px 0px;
-  width: 20px;
-  height: 20px;
+  margin: 2px 0px 0px 0px;
+  width: 23px;
+  height: 23px;
 }

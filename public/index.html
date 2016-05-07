@@ -30,7 +30,7 @@
         <section>
           <p id='h2'>Please enter your name below</p>
           <form>
-            <input id="input" type="text" ng-model="name" placeholder="e.g. Misa">
+            <input id="input" type="text" ng-model="name" placeholder="e.g. Misa" autofocus="true">
             <button id="submit" ng-click="ctrl.newTranslation(name)">Convert</button>
           </form>
         </section>
@@ -47,10 +47,10 @@
           </section>
         </section>
 
-        <section class="prev_search">
+        <section class="prev_search_box">
           <p id='h4' ng-show="ctrl.translationObj.japanese">Previous searches</p>
           <ul>
-            <li ng-repeat="translation in ctrl.allTranslations">
+            <li ng-repeat="translation in ctrl.allTranslations" class='prev_search_list'>
               {{ translation.romanji.charAt(0).toUpperCase() + translation.romanji.slice(1) }}: <span id="translation-{{$index}}" class="ming ming-sm">{{ translation.japanese }}</span>
             </li>
           </ul>
