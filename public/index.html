@@ -39,11 +39,11 @@
           <p id='h3'>Your name translates to</p>
           <section>
             <section class="ming ming-lg">
-              {{ctrl.translationObj.japanese}}
+              <span id="translation-main">{{ctrl.translationObj.japanese}}</span>
             </section>
             <a target="_blank" href="http://twitter.com/home?status=This is my name in Japanese: {{ctrl.translationObj.japanese}}" /><img src="/images/twitter-icon.png" alt=""  class="twitter"/></a>
             <a target="_blank" href="https://translate.google.com/#auto/ja/{{ctrl.translationObj.japanese}}"><img src="/images/speaker-icon.png" alt=""/></a>
-            <a href="#" ng-click="ctrl.printId($index);"><img src="/images/printer-icon.png" alt="Print your name!" class="print" /></a>
+            <a href="#" ng-click="ctrl.printId('main');"><img src="/images/printer-icon.png" alt="Print your name!" class="print" /></a>
           </section>
         </section>
 
@@ -51,7 +51,7 @@
           <p id='h4' ng-show="ctrl.translationObj.japanese">Previous searches</p>
           <ul>
             <li ng-repeat="translation in ctrl.allTranslations" class='prev_search_list'>
-              {{ translation.romanji.charAt(0).toUpperCase() + translation.romanji.slice(1) }}: <span id="translation-{{$index}}" class="ming ming-sm">{{ translation.japanese }}</span>
+              {{ translation.romanji.charAt(0).toUpperCase() + translation.romanji.slice(1) }}: <span id="translation-{{$index}}" class="ming ming-sm">{{ translation.japanese }}</span><a class='print_link' href="#" ng-click="ctrl.printId($index);">print</a>
             </li>
           </ul>
         </section>
