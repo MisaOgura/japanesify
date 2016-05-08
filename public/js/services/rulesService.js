@@ -13,6 +13,7 @@ japanesifyApp.service('rulesService', ['CONVERSION_CONSTANT', function(CONVERSIO
   var consVowelRWY = '^[b-df-hj-np-tv-z][aeiou][rwy](\\b|(?![aeiouy]))';
   var doubleLNVowel = '^[ln]{2}[aeiou]';
   var doubleConsDoubleVowel = '^[bdf-hj-np-tv-z]{2}[aeo][aeiu]';
+  var cConsVowelRWY = '^c([b-df-hj-np-tv-z][aeiou][rwy])(\\b|(?![aeiouy]))';
 
   this.twoCharSyllables = function(){
     return new RegExp(consVowel+'|'+
@@ -29,6 +30,7 @@ japanesifyApp.service('rulesService', ['CONVERSION_CONSTANT', function(CONVERSIO
   };
 
   this.fourCharSyllables = function() {
-    return new RegExp(doubleConsDoubleVowel, 'i');
+    return new RegExp(doubleConsDoubleVowel + '|' +
+                      cConsVowelRWY, 'i');
   };
 }]);

@@ -97,5 +97,6 @@ japanesifyApp.constant('CONVERSION_CONSTANT', {
   'cey' : 'シー',
   'phoe': 'フィー',
   'shee': 'シー',
+  'char' : 'チャー'
 }
 );
