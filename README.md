@@ -3,7 +3,7 @@
 
 Have you ever wondered how your name is spelled in Japanese? Then **Japanesify** is your solution!
 
-*( Following information is correct as of 6th May 2016 )*
+*( Following information is correct as of 10th May 2016 )*
 
 ### 1. Introduction
 #### What is Japanesify?
@@ -15,7 +15,7 @@ The idea for this project came into my mind when people on the course asked me t
 #### Kudos to our teamwork!
 I was fortunate to have an amazing group to realise this idea. Huge thanks and credits go to Anne, Caspar, Nick and Rhiannon, who were absolute joys to work with. We together created a cooperative, open and supportive environment, which allowed us to produce something we're so proud of! For more details on the project development, please refer to section 3.
 
-So here it comes! The current version of Japanesify supports **60+ names** as an input and **Katakana** as an output. I am hoping to keep working on the conversion algorithm to support more names.
+So here it comes! The current version of Japanesify supports **100 syllables** as an input and **Katakana** as an output. I am hoping to keep working on the conversion algorithm to support more names.
 
 ### 2. How to use
 Japanesify is available both online and offline. Installation instructions are below.
