@@ -1,6 +1,7 @@
 japanesifyApp.constant('CONVERSION_CONSTANT', {
   'a'   : 'ア',
   'e'   : 'エ',
+  'g'   : 'グ',
   'i'   : 'イ',
   'o'   : 'オ',
   'u'   : 'ウ',
